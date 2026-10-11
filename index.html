@@ -13,45 +13,6 @@
 
 		gtag('config', 'UA-171620673-1');
 	</script>
-	<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
-
-	<style>
-		/* Fullscreen loading overlay */
-		#loading {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: #222222;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			z-index: 9999;
-			transition: opacity 0.8s ease, visibility 0.8s ease;
-		}
-
-		#loading.hidden {
-			opacity: 0;
-			visibility: hidden;
-		}
-	</style>
-	<!-- Lottie Player -->
-
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="img/favicon.ico" type="image/icon">
-	<title>PRASHANT JHA</title>
-
-	<meta name="description"
-		content="Prashant Kumar jha A Full Stack Developer Who Loves To code in Java,Microservice Springboot">
-	<meta property="og:title" content="About Prashant jha" />
-	<meta property="og:url" content="https://prashay.github.io/prashantj/" />
-	<meta property="og:description" content="About Prashant jha A Full Stack Web Developer">
-	<meta property="og:image" content="/image.png" />
-	<meta property="og:type" content=”Portfolio” />
-
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="vendors/linericon/style.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -63,14 +24,42 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
 	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/modern-design.css">
 
 </head>
 
 <body>
+	<!-- Modern Apple Silicon-Grade Starting Loader -->
 	<div id="loading">
-		<dotlottie-wc src="https://lottie.host/1c1777ab-8c78-4644-b77c-04dfd06326fa/zlYPpE5bAG.lottie"
-			style="width: 500px; height: 500px" speed="1" autoplay loop>
-		</dotlottie-wc>
+		<div class="loader-container">
+			<div class="loader-apple-box">
+				<div class="loader-orbit-ring"></div>
+				<!-- Precision Vector Apple Glyph with Titanium Sheen -->
+				<svg class="loader-apple-svg" viewBox="0 0 170 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<defs>
+						<linearGradient id="appleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+							<stop offset="0%" stop-color="#ffffff"/>
+							<stop offset="35%" stop-color="#f1f5f9"/>
+							<stop offset="70%" stop-color="#94a3b8"/>
+							<stop offset="100%" stop-color="#64748b"/>
+						</linearGradient>
+						<filter id="appleGlow" x="-20%" y="-20%" width="140%" height="140%">
+							<feGaussianBlur stdDeviation="5" result="blur" />
+							<feComposite in="SourceGraphic" in2="blur" operator="over" />
+						</filter>
+					</defs>
+					<!-- Apple Leaf -->
+					<path d="M106.6 20.3C114.7 10.4 128.4 2.8 141.2 3C142.9 16.9 136.8 30.6 128.6 39.8C120.7 48.7 107.5 56.4 94.6 55.4C92.7 41.5 98.7 28.1 106.6 20.3Z" fill="url(#appleGradient)" filter="url(#appleGlow)"/>
+					<!-- Apple Body -->
+					<path d="M152.1 123.6C145.4 133.4 137.9 143.6 126.9 143.8C116.1 144 112.5 137.4 100.1 137.4C87.4 137.4 83.5 143.6 73.1 144C62.4 144.4 54.3 133.2 47.4 123.4C33.4 103.4 22.8 66.8 37.1 42C44.2 29.7 57 21.8 70.8 21.6C81.2 21.4 91.1 28.6 97.5 28.6C103.8 28.6 115.8 19.8 128.5 21.2C133.8 21.4 148.9 23.3 158.7 37.7C157.9 38.2 140 48.7 140.2 69.8C140.5 95.1 162.7 103.6 163 103.8C162.7 104.7 159.2 116.9 152.1 123.6Z" fill="url(#appleGradient)" filter="url(#appleGlow)"/>
+				</svg>
+			</div>
+			<div class="loader-brand">PRASHANT JHA</div>
+			<div class="loader-status" id="loaderStatus">Initializing Experience...</div>
+			<div class="loader-track">
+				<div class="loader-bar" id="loaderBar"></div>
+			</div>
+		</div>
 	</div>
 	<!--================Header Menu Area =================-->
 	<header class="header_area">
@@ -119,43 +108,44 @@
 							</div>
 							<div class="media-body">
 								<div class="personal_text">
-									<h5>Hi everyone, Welcome to my Portfolio</h5>
+									<h5>👋 Hi everyone, Welcome to my Portfolio</h5>
 									<div class="Hello">
 										<h3>Prashant Kumar Jha</h3>
 									</div>
-									<h4>Senior Software Developer</h4>
+									<h4>Senior Software Developer & Architect</h4>
 
-									<p>I’m HPE (Certified Java Developer) from India.<br /> working from last 8 plus
-										years in IT inductrial with technology <br /> java8,Springboot,Rest Api,
-										Hibernate, AWS ,<br /> MicroService, JPA, Maven, Git, Jira ,<br /> Confluence,
-										BitBucket and angular framework ,I am currently working for LOWES India
+									<div class="tech-badge-container">
+										<span class="badge-pill">Java 8 / 17</span>
+										<span class="badge-pill">Spring Boot</span>
+										<span class="badge-pill">Microservices</span>
+										<span class="badge-pill">Kafka & Elastic</span>
+										<span class="badge-pill">AWS Certified</span>
+										<span class="badge-pill">SAFe® 5 Agile</span>
+										<span class="badge-pill">Docker & K8s</span>
+									</div>
+
+									<p>HPE Certified Java Developer with 8+ years of enterprise experience building resilient distributed systems, event-driven architectures, and high-performance microservices. Currently engineering scalable platforms at <strong>LOWES India</strong>, previously at <strong>IBM</strong>, <strong>HCL</strong>, and <strong>CGI</strong>.
 									</p>
-
-
 
 									<ul class="list basic_info">
 										<li><a href="https://calendar.google.com/calendar/r/week/2026"
 												target="_blank"><i class="fa fa-calendar-check-o"
-													aria-hidden="true"></i>2025</a></li>
+													aria-hidden="true"></i>2026 Schedule</a></li>
 										<li><a href="mailto:pvats2901@gmail.com" target="_blank"><i
-													class="fa fa-envelope-o" aria-hidden="true"></i>Mail-me</a></li>
+													class="fa fa-envelope-o" aria-hidden="true"></i>Email Me</a></li>
 										<li><a href="https://goo.gl/maps/3PD3JXn8gta7TtXt8" target="_blank"><i
-													class="fa fa-location-arrow" aria-hidden="true"></i> Bengaluru</a>
+													class="fa fa-location-arrow" aria-hidden="true"></i> Bengaluru, India</a>
 										</li>
 									</ul>
 
-
-
 									<ul class="list personal_social">
-										<li><a href="https://github.com/Prashay" target="_blank"><i
+										<li><a href="https://github.com/Prashay" target="_blank" title="GitHub"><i
 													class="fa fa-github"></i></a></li>
-										<li><a href="https://twitter.com/prashan60596422" target=" _blank"><i
+										<li><a href="https://twitter.com/prashan60596422" target="_blank" title="Twitter"><i
 													class="fa fa-twitter"></i></a></li>
 										<li><a href="https://www.linkedin.com/in/prashant-jha-5b504b185/"
-												target=" _blank"><i class="fa fa-linkedin"></i></a></li>
+												target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
 									</ul>
-
-
 								</div>
 							</div>
 						</div>
@@ -275,141 +265,211 @@
 	<!--================My Tabs Area =================-->
 	<section class="mytabs_area p_120">
 		<div class="container">
+			<div class="main_title">
+				<h2>Experience & Education</h2>
+				<p>My professional career trajectory and academic background</p>
+			</div>
 			<div class="tabs_inner">
-				<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
 					<li class="nav-item">
 						<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-							aria-controls="home" aria-selected="true">My Experiences</a>
+							aria-controls="home" aria-selected="true"><i class="fa fa-briefcase"></i> Work Experience</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-							aria-controls="profile" aria-selected="false">My Education</a>
+							aria-controls="profile" aria-selected="false"><i class="fa fa-graduation-cap"></i> Education</a>
 					</li>
 				</ul>
 				<div class="tab-content" id="myTabContent">
 					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-						<ul class="list">
-							<li>
-								<span></span>
-								<div class="media">
-									<div class="d-flex">
-										<p>Jan 2025 To Present</p>
+						<div class="timeline-container">
+							<!-- Experience 1: LOWES INDIA -->
+							<div class="timeline-item">
+								<div class="timeline-card">
+									<div class="timeline-header">
+										<h3 class="timeline-entity"><i class="fa fa-building"></i> LOWES INDIA</h3>
+										<span class="timeline-date"><i class="fa fa-calendar-check-o"></i> Jan 2025 – Present</span>
 									</div>
-									<div class="media-body">
-										<h3>LOWES INDIA</h3>
-										<!-- <h4><b>Client-</b>LOWES</h4> -->
-										<h3><b>Project - </b>Tachyon</h3>
-										<p>Senior software Developer <br />Working on microservice with Elastic search
-											and kafka development<br> Bangalore , India</p>
+									<div class="timeline-role-row">
+										<span class="timeline-role">Senior Software Developer</span>
+										<span class="timeline-project-badge">Project: Tachyon</span>
 									</div>
-								</div>
-							</li>
-							<li>
-								<span></span>
-								<div class="media">
-									<div class="d-flex">
-										<p>July 2023 To Dec 2024</p>
-									</div>
-									<div class="media-body">
-										<h3>IBM</h3>
-										<!-- <h4><b>Client-</b>LOWES</h4> -->
-										<h3><b>Project - </b>LOCI</h3>
-										<p>Senior software Developer <br />Working on microservice with
-											argoCD,kubernates,Docker and Ci cd tools development<br> Bangalore , India
-										</p>
+									<p class="timeline-desc">
+										Architecting and developing mission-critical microservices with high-throughput event streaming via Apache Kafka and distributed search capabilities using Elasticsearch.
+									</p>
+									<div class="timeline-meta-row">
+										<div class="timeline-tags">
+											<span class="timeline-tag">Java 17</span>
+											<span class="timeline-tag">Spring Boot</span>
+											<span class="timeline-tag">Kafka</span>
+											<span class="timeline-tag">Elasticsearch</span>
+											<span class="timeline-tag">Microservices</span>
+										</div>
+										<span class="timeline-location"><i class="fa fa-map-marker"></i> Bengaluru, India</span>
 									</div>
 								</div>
-							</li>
-							<li>
-								<span></span>
-								<div class="media">
-									<div class="d-flex">
-										<p>Oct 2021 To July 2023</p>
-									</div>
-									<div class="media-body">
-										<h3>HCL</h3>
-										<!-- <h4><b>Client-</b>BOSCH</h4> -->
-										<h3><b>Project - </b>Mobility Marketplace</h3>
-										<p>Senior software Developer <br />Working on microservice development<br>
-											Bangalore , India</p>
-									</div>
-								</div>
-							</li>
-							<li>
-								<span></span>
-								<div class="media">
-									<div class="d-flex">
-										<p>Nov 2018 To Oct 2021</p>
-									</div>
-									<div class="media-body">
-										<h3>CGI</h3>
-										<!-- <h4><b>Client-</b>HSBC</h4> -->
-										<h3><b>Project - </b>Trade -360</h3>
-										<p>Software Developer <br />Working on fullstack java development<br> Bangalore
-											, India</p>
+							</div>
 
+							<!-- Experience 2: IBM -->
+							<div class="timeline-item">
+								<div class="timeline-card">
+									<div class="timeline-header">
+										<h3 class="timeline-entity"><i class="fa fa-building"></i> IBM</h3>
+										<span class="timeline-date"><i class="fa fa-calendar-check-o"></i> July 2023 – Dec 2024</span>
+									</div>
+									<div class="timeline-role-row">
+										<span class="timeline-role">Senior Software Developer</span>
+										<span class="timeline-project-badge">Project: LOCI</span>
+									</div>
+									<p class="timeline-desc">
+										Engineered cloud-native microservices with robust GitOps continuous delivery using ArgoCD, containerized on Kubernetes and Docker, and streamlined enterprise CI/CD pipelines.
+									</p>
+									<div class="timeline-meta-row">
+										<div class="timeline-tags">
+											<span class="timeline-tag">Kubernetes</span>
+											<span class="timeline-tag">Docker</span>
+											<span class="timeline-tag">ArgoCD</span>
+											<span class="timeline-tag">CI/CD</span>
+											<span class="timeline-tag">Microservices</span>
+										</div>
+										<span class="timeline-location"><i class="fa fa-map-marker"></i> Bengaluru, India</span>
 									</div>
 								</div>
-							</li>
-							<!-- <li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>Mar 2018 To July 2018</p>
-										</div>
-										<div class="media-body">
-											<h3>STIXIS TECHNOLOGY</h3>
-											<h3><b>Project-</b>Tracking Management</h3>
-											<p>Software Developer <br />Working on java development<br> Bangalore , India</p>
-										
-										</div>
+							</div>
+
+							<!-- Experience 3: HCL -->
+							<div class="timeline-item">
+								<div class="timeline-card">
+									<div class="timeline-header">
+										<h3 class="timeline-entity"><i class="fa fa-building"></i> HCL</h3>
+										<span class="timeline-date"><i class="fa fa-calendar-check-o"></i> Oct 2021 – July 2023</span>
 									</div>
-								</li> -->
-						</ul>
+									<div class="timeline-role-row">
+										<span class="timeline-role">Senior Software Developer</span>
+										<span class="timeline-project-badge">Project: Mobility Marketplace</span>
+									</div>
+									<p class="timeline-desc">
+										Designed and implemented resilient backend microservices for automotive and mobility solutions, integrating REST APIs and distributed database persistence.
+									</p>
+									<div class="timeline-meta-row">
+										<div class="timeline-tags">
+											<span class="timeline-tag">Spring Boot</span>
+											<span class="timeline-tag">REST APIs</span>
+											<span class="timeline-tag">JPA / Hibernate</span>
+											<span class="timeline-tag">AWS Cloud</span>
+										</div>
+										<span class="timeline-location"><i class="fa fa-map-marker"></i> Bengaluru, India</span>
+									</div>
+								</div>
+							</div>
+
+							<!-- Experience 4: CGI -->
+							<div class="timeline-item">
+								<div class="timeline-card">
+									<div class="timeline-header">
+										<h3 class="timeline-entity"><i class="fa fa-building"></i> CGI</h3>
+										<span class="timeline-date"><i class="fa fa-calendar-check-o"></i> Nov 2018 – Oct 2021</span>
+									</div>
+									<div class="timeline-role-row">
+										<span class="timeline-role">Software Developer</span>
+										<span class="timeline-project-badge">Project: Trade-360</span>
+									</div>
+									<p class="timeline-desc">
+										Developed core enterprise features for financial and trade banking platforms using full-stack Java, Spring framework, and Angular front-end integration.
+									</p>
+									<div class="timeline-meta-row">
+										<div class="timeline-tags">
+											<span class="timeline-tag">Full Stack Java</span>
+											<span class="timeline-tag">Spring</span>
+											<span class="timeline-tag">Angular</span>
+											<span class="timeline-tag">Banking & Trade</span>
+										</div>
+										<span class="timeline-location"><i class="fa fa-map-marker"></i> Bengaluru, India</span>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-						<ul class="list">
-							<li>
-								<span></span>
-								<div class="media">
-									<div class="d-flex">
-										<p>August 2013 To May 2017</p>
-									</div>
-									<div class="media-body">
-										<h4><b>B.Tech | Graduation</b> </h4>
-										<h3>College of Engineering ,Bhubaneswar (India)</h3>
-										<p>Computer Science Engineer <br /></p>
 
+					<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+						<div class="timeline-container">
+							<!-- Education 1: Graduation -->
+							<div class="timeline-item">
+								<div class="timeline-card">
+									<div class="timeline-header">
+										<h3 class="timeline-entity"><i class="fa fa-graduation-cap"></i> College of Engineering, Bhubaneswar</h3>
+										<span class="timeline-date"><i class="fa fa-calendar-check-o"></i> Aug 2013 – May 2017</span>
+									</div>
+									<div class="timeline-role-row">
+										<span class="timeline-role">Bachelor of Technology (B.Tech)</span>
+										<span class="timeline-project-badge">Computer Science & Engineering</span>
+									</div>
+									<p class="timeline-desc">
+										Graduated with core specialization in Computer Science, Data Structures & Algorithms, Distributed Systems, Database Management Systems, and Object-Oriented Software Engineering.
+									</p>
+									<div class="timeline-meta-row">
+										<div class="timeline-tags">
+											<span class="timeline-tag">B.Tech</span>
+											<span class="timeline-tag">Computer Science</span>
+											<span class="timeline-tag">Algorithms</span>
+											<span class="timeline-tag">OOP</span>
+										</div>
+										<span class="timeline-location"><i class="fa fa-map-marker"></i> Bhubaneswar, India</span>
 									</div>
 								</div>
-							</li>
-							<li>
-								<span></span>
-								<div class="media">
-									<div class="d-flex">
-										<p>March 2010 To March 2012</p>
+							</div>
+
+							<!-- Education 2: 10+2 -->
+							<div class="timeline-item">
+								<div class="timeline-card">
+									<div class="timeline-header">
+										<h3 class="timeline-entity"><i class="fa fa-university"></i> Rose Public School</h3>
+										<span class="timeline-date"><i class="fa fa-calendar-check-o"></i> Mar 2010 – Mar 2012</span>
 									</div>
-									<div class="media-body">
-										<h4><b>10+2</b> </h4>
-										<h3>Rose public School</h3>
-										<p> Science Stream <br />PCM, CBSE </p>
+									<div class="timeline-role-row">
+										<span class="timeline-role">Higher Secondary (10+2)</span>
+										<span class="timeline-project-badge">Science Stream (PCM)</span>
+									</div>
+									<p class="timeline-desc">
+										Completed Senior Secondary education with focus on Physics, Chemistry, Mathematics, and Computer Science under the Central Board of Secondary Education (CBSE).
+									</p>
+									<div class="timeline-meta-row">
+										<div class="timeline-tags">
+											<span class="timeline-tag">CBSE</span>
+											<span class="timeline-tag">Physics</span>
+											<span class="timeline-tag">Chemistry</span>
+											<span class="timeline-tag">Mathematics</span>
+										</div>
+										<span class="timeline-location"><i class="fa fa-map-marker"></i> India</span>
 									</div>
 								</div>
-							</li>
-							<li>
-								<span></span>
-								<div class="media">
-									<div class="d-flex">
-										<p>March 2000 To March 2010</p>
+							</div>
+
+							<!-- Education 3: High School -->
+							<div class="timeline-item">
+								<div class="timeline-card">
+									<div class="timeline-header">
+										<h3 class="timeline-entity"><i class="fa fa-book"></i> GBPS</h3>
+										<span class="timeline-date"><i class="fa fa-calendar-check-o"></i> Mar 2000 – Mar 2010</span>
 									</div>
-									<div class="media-body">
-										<h4><b>High School</b></h4>
-										<h3>GBPS</h3>
-										<p> CBSE </p>
+									<div class="timeline-role-row">
+										<span class="timeline-role">Secondary High School (10th)</span>
+										<span class="timeline-project-badge">General Science & Mathematics</span>
+									</div>
+									<p class="timeline-desc">
+										Completed foundation secondary school education under CBSE with academic excellence in Mathematics and Sciences.
+									</p>
+									<div class="timeline-meta-row">
+										<div class="timeline-tags">
+											<span class="timeline-tag">CBSE</span>
+											<span class="timeline-tag">Secondary School</span>
+											<span class="timeline-tag">Foundation</span>
+										</div>
+										<span class="timeline-location"><i class="fa fa-map-marker"></i> India</span>
 									</div>
 								</div>
-							</li>
-						</ul>
+							</div>
+						</div>
 					</div>
 
 				</div>
@@ -789,20 +849,41 @@
 		document.getElementById("datetime").innerHTML = datetime;
 		// document.getElementById("datetime").innerHTML = formattedDate;
 
+		// Modern Apple-Grade Starting Loader Controller
 		const loading = document.getElementById("loading");
+		const loaderStatus = document.getElementById("loaderStatus");
+		
+		const statusList = ["Initializing Experience...", "Loading Architecture...", "Ready"];
+		let statusIndex = 0;
+		const statusTimer = setInterval(() => {
+			statusIndex++;
+			if (loaderStatus && statusIndex < statusList.length) {
+				loaderStatus.innerText = statusList[statusIndex];
+			}
+		}, 380);
 
-		const lottiePlayer = loading.querySelector('dotlottie-wc');
+		function dismissLoader() {
+			clearInterval(statusTimer);
+			if (loaderStatus) loaderStatus.innerText = "Welcome";
+			setTimeout(() => {
+				if (loading) {
+					loading.classList.add("hidden");
+					setTimeout(() => {
+						loading.style.display = "none";
+					}, 700);
+				}
+			}, 300);
+		}
 
-		setTimeout(() => {
-			loading.classList.add("hidden");
-			// Set the wrapper's display to block to show the content
-			smoothWrapper.style.display = "block";
-
-			// It's a good practice to initialize GSAP AFTER the content is visible
-			initSmoothScrolling();
-
-			lottiePlayer.stop();
-		}, 2500);
+		if (document.readyState === 'complete') {
+			setTimeout(dismissLoader, 900);
+		} else {
+			window.addEventListener('load', () => {
+				setTimeout(dismissLoader, 800);
+			});
+			// Failsafe timeout so user is never stuck
+			setTimeout(dismissLoader, 1800);
+		}
 	</script>
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="js/jquery-3.3.1.min.js"></script>
@@ -820,6 +901,15 @@
         <script src="vendors/counter-up/jquery.counterup.min.js"></script> -->
 	<!-- <script src="js/mail-script.js"></script> -->
 	<script src="js/theme.js"></script>
+	<script>
+		// Ensure Bootstrap tab switching works smoothly
+		$(document).ready(function() {
+			$('#myTab a').on('click', function (e) {
+				e.preventDefault();
+				$(this).tab('show');
+			});
+		});
+	</script>
 </body>
 
 </html>
