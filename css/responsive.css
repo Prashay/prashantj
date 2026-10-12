@@ -109,7 +109,7 @@
 		width: 725px;
 	}
 	.header_area .navbar {
-		background: #000;
+		background: transparent;
 	}
     .navbar-toggler[aria-expanded="false"] span:nth-child(2) {
 		opacity: 1;
@@ -164,8 +164,8 @@
         margin-left: 0px;
     }
 	.header_area .navbar-collapse{
-		max-height: 340px;
-		overflow-y: scroll;
+		max-height: none;
+		overflow-y: visible;
 	}
 	.header_area .navbar .nav .nav-item.submenu ul .nav-item .nav-link {
 		padding: 0px 15px;
@@ -428,7 +428,7 @@
 	/* Main Menu Area css
 	============================================================================================ */
 	.header_area .navbar-collapse{
-		max-height: 250px;
+		max-height: none;
 	}
 	/* End Main Menu Area css
 	============================================================================================ */
