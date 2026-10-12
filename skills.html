@@ -17,6 +17,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/favicon.ico" type="image/icon">
         <title> PRASHANT JHA</title>
+
+        <!-- PWA Mobile App Capabilities -->
+        <link rel="manifest" href="manifest.json">
+        <meta name="theme-color" content="#090d16">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="Prashant Jha">
+        <link rel="apple-touch-icon" href="img/app-icon.svg">
+
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="vendors/linericon/style.css">
@@ -32,6 +41,7 @@
         <link rel="stylesheet" href="css/responsive.css">
         <link rel="stylesheet" href="css/modern-design.css">
         <script src="js/theme-toggle.js"></script>
+        <script src="js/pwa-install.js"></script>
     </head>
     <body>
         
@@ -73,6 +83,12 @@
 									<button class="theme-toggle-btn" type="button" aria-label="Toggle Light/Dark Theme" title="Toggle Light/Dark Theme">
 										<i class="fa fa-sun-o theme-icon"></i>
 										<span class="theme-text">Light Mode</span>
+									</button>
+								</li>
+								<li class="nav-item">
+									<button class="app-download-btn" type="button" aria-label="Download Mobile App" title="Download Mobile App & Scanner">
+										<i class="fa fa-qrcode mr-1"></i>
+										<span>Download App</span>
 									</button>
 								</li>
 							</ul>

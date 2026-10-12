@@ -8,6 +8,14 @@
 	<link rel="icon" href="img/favicon.ico" type="image/icon">
 	<title>PRASHANT JHA</title>
 
+	<!-- PWA Mobile App Capabilities -->
+	<link rel="manifest" href="manifest.json">
+	<meta name="theme-color" content="#090d16">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-title" content="Prashant Jha">
+	<link rel="apple-touch-icon" href="img/app-icon.svg">
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171620673-1"></script>
 	<script>
@@ -30,6 +38,7 @@
 	<link rel="stylesheet" href="css/responsive.css">
 	<link rel="stylesheet" href="css/modern-design.css">
 	<script src="js/theme-toggle.js"></script>
+	<script src="js/pwa-install.js"></script>
 
 </head>
 
@@ -107,6 +116,12 @@
 								<button class="theme-toggle-btn" type="button" aria-label="Toggle Light/Dark Theme" title="Toggle Light/Dark Theme">
 									<i class="fa fa-sun-o theme-icon"></i>
 									<span class="theme-text">Light Mode</span>
+								</button>
+							</li>
+							<li class="nav-item">
+								<button class="app-download-btn" type="button" aria-label="Download Mobile App" title="Download Mobile App & Scanner">
+									<i class="fa fa-qrcode mr-1"></i>
+									<span>Download App</span>
 								</button>
 							</li>
 						</ul>
@@ -516,10 +531,11 @@
 					<li data-filter=".ibm"><a href="#">IBM</a></li>
 					<li data-filter=".java"><a href="#">JAVA</a></li>
 					<li data-filter=".angular"><a href="#">ANGULAR</a></li>
-					<li data-filter=".aws"><a href="">AWS</a></li>
+					<li data-filter=".aws"><a href="#">AWS</a></li>
 					<li data-filter=".hpe"><a href="#">HPE</a></li>
-					<li data-filter=".safe"><a href="">AGILE</a></li>
-					<li data-filter=".ai"><a href="">AI</a></li>
+					<li data-filter=".safe"><a href="#">AGILE</a></li>
+					<li data-filter=".ai"><a href="#">AI</a></li>
+					<li data-filter=".lowes"><a href="#">LOWES</a></li>
 				</ul>
 			</div>
 		</div>
@@ -676,6 +692,39 @@
 						</div>
 						<div class="g_item_text">
 							<h4><b>IBM watsonx Essential</b></h4>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-6 ai lowes">
+					<div class="h_gallery_item" data-verify="https://www.linkedin.com/learning/certificates/ef8e86ccf1e9b243e61ce34a7180f0799d345fde0a3aedc2a5cc4f2ea07cdc42">
+						<div class="g_img_item">
+							<img class="img-fluid" src="img/certificate/career_essentials_genai_msft.jpg"
+								alt="Career Essentials in Generative AI by Microsoft and LinkedIn" loading="lazy">
+						</div>
+						<div class="g_item_text">
+							<h4><b>Career Essentials in Generative AI</b></h4>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-6 ai lowes">
+					<div class="h_gallery_item" data-verify="https://www.linkedin.com/learning/certificates/cd51804c56e4ee08667aeaebe441bab644b8209b1479f879b2f3d4f5397f05613">
+						<div class="g_img_item">
+							<img class="img-fluid" src="img/certificate/what_is_genai_linkedin.jpg"
+								alt="What Is Generative AI?" loading="lazy">
+						</div>
+						<div class="g_item_text">
+							<h4><b>What Is Generative AI?</b></h4>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-6 ai lowes">
+					<div class="h_gallery_item" data-verify="https://verify.skilljar.com/c/ytj28v5rqg75">
+						<div class="g_img_item">
+							<img class="img-fluid" src="img/certificate/claude_code_anthropic.jpg"
+								alt="Claude Code in Action" loading="lazy">
+						</div>
+						<div class="g_item_text">
+							<h4><b>Claude Code in Action</b></h4>
 						</div>
 					</div>
 				</div>

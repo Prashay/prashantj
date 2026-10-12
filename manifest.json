@@ -1,0 +1,47 @@
+{
+  "name": "Prashant Jha | Senior Software Developer",
+  "short_name": "Prashant Jha",
+  "description": "Official mobile application and portfolio of Prashant Jha - Senior Software Developer & Architect.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#090d16",
+  "theme_color": "#090d16",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "img/app-icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "portfolio",
+    "business",
+    "productivity"
+  ],
+  "shortcuts": [
+    {
+      "name": "Live Projects",
+      "short_name": "Projects",
+      "description": "View live production projects",
+      "url": "./projects.html",
+      "icons": [{ "src": "img/app-icon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Technical Skills",
+      "short_name": "Skills",
+      "description": "Explore technical proficiencies",
+      "url": "./skills.html",
+      "icons": [{ "src": "img/app-icon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "About Prashant",
+      "short_name": "About",
+      "description": "Career background and experience",
+      "url": "./about.html",
+      "icons": [{ "src": "img/app-icon.svg", "sizes": "192x192" }]
+    }
+  ]
+}

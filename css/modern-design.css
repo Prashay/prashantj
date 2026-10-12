@@ -2555,41 +2555,108 @@ body.light-mode p,
   color: #334155 !important;
 }
 
-/* Header & Navbar in Light Mode */
+/* Header & Navbar in Light Mode (Both static and fixed-scroll states) */
 body.light-mode .header_area,
 [data-theme="light"] .header_area {
-  background: rgba(255, 255, 255, 0.94) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
   border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04) !important;
+}
+
+body.light-mode .header_area .main_menu,
+[data-theme="light"] .header_area .main_menu {
+  background: transparent !important;
 }
 
 body.light-mode .header_area.navbar_fixed,
 [data-theme="light"] .header_area.navbar_fixed {
-  background: rgba(255, 255, 255, 0.98) !important;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08) !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08) !important;
 }
 
+body.light-mode .header_area.navbar_fixed .main_menu,
+[data-theme="light"] .header_area.navbar_fixed .main_menu {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Brand Logo in Light Mode */
+body.light-mode .header_area .navbar-brand.brand-modern .brand-text,
+body.light-mode .brand-modern .brand-text,
 body.light-mode .brand-text,
+[data-theme="light"] .header_area .navbar-brand.brand-modern .brand-text,
+[data-theme="light"] .brand-modern .brand-text,
 [data-theme="light"] .brand-text {
   color: #0f172a !important;
+  text-shadow: none !important;
 }
 
-body.light-mode .navbar .nav .nav-item .nav-link,
-[data-theme="light"] .navbar .nav .nav-item .nav-link {
+body.light-mode .brand-modern .brand-text .brand-accent,
+[data-theme="light"] .brand-modern .brand-text .brand-accent {
+  background: linear-gradient(135deg, #0284c7 0%, #0891b2 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+body.light-mode .brand-modern .brand-symbol rect,
+[data-theme="light"] .brand-modern .brand-symbol rect {
+  fill: rgba(79, 70, 229, 0.08) !important;
+  stroke: url(#brandGrad) !important;
+}
+
+body.light-mode .brand-modern .brand-symbol path[stroke="#ffffff"],
+[data-theme="light"] .brand-modern .brand-symbol path[stroke="#ffffff"] {
+  stroke: #4f46e5 !important;
+}
+
+/* Nav Links in Light Mode */
+body.light-mode .header_area .navbar .nav .nav-item .nav-link,
+body.light-mode .header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link,
+body.light-mode .header_area .navbar .nav-link,
+[data-theme="light"] .header_area .navbar .nav .nav-item .nav-link,
+[data-theme="light"] .header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link,
+[data-theme="light"] .header_area .navbar .nav-link {
   color: #334155 !important;
   font-weight: 600 !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
 }
 
-body.light-mode .navbar .nav .nav-item.active .nav-link,
-body.light-mode .navbar .nav .nav-item:hover .nav-link,
-[data-theme="light"] .navbar .nav .nav-item.active .nav-link,
-[data-theme="light"] .navbar .nav .nav-item:hover .nav-link {
-  color: #4f46e5 !important;
+body.light-mode .header_area .navbar .nav .nav-item .nav-link:hover,
+body.light-mode .header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link:hover,
+[data-theme="light"] .header_area .navbar .nav .nav-item .nav-link:hover,
+[data-theme="light"] .header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link:hover {
+  color: #0f172a !important;
+  background: rgba(15, 23, 42, 0.06) !important;
+}
+
+body.light-mode .header_area .navbar .nav .nav-item.active .nav-link,
+body.light-mode .header_area.navbar_fixed .main_menu .navbar .nav .nav-item.active .nav-link,
+[data-theme="light"] .header_area .navbar .nav .nav-item.active .nav-link,
+[data-theme="light"] .header_area.navbar_fixed .main_menu .navbar .nav .nav-item.active .nav-link {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%) !important;
+  border: 1px solid transparent !important;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3) !important;
+}
+
+body.light-mode .navbar-toggler,
+[data-theme="light"] .navbar-toggler {
+  background: rgba(15, 23, 42, 0.06) !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
 }
 
 body.light-mode .navbar-toggler .icon-bar,
-[data-theme="light"] .navbar-toggler .icon-bar {
+body.light-mode .navbar-toggler span,
+[data-theme="light"] .navbar-toggler .icon-bar,
+[data-theme="light"] .navbar-toggler span {
   background: #0f172a !important;
 }
 
@@ -3425,6 +3492,728 @@ body.light-mode .blog-pagination .page-item.active .page-link,
     transform: translateY(0);
   }
 }
+
+/* =====================================================================
+   PWA SMART MOBILE INSTALL BANNER & MODAL ARCHITECTURE
+===================================================================== */
+.pwa-smart-banner {
+  position: fixed;
+  bottom: 24px;
+  left: 20px;
+  right: 20px;
+  max-width: 440px;
+  margin: 0 auto;
+  z-index: 99999;
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  padding: 12px 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(99, 102, 241, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  animation: pwaSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pwaSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.pwa-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.pwa-banner-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(99, 102, 241, 0.15);
+}
+
+.pwa-banner-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pwa-banner-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.pwa-banner-text strong {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pwa-banner-text span {
+  font-size: 11px;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pwa-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.pwa-btn-install {
+  background: linear-gradient(135deg, #6366f1, #06b6d4) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 8px 16px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4) !important;
+  transition: transform 0.15s ease !important;
+  white-space: nowrap;
+}
+
+.pwa-btn-install:active {
+  transform: scale(0.94) !important;
+}
+
+.pwa-btn-close {
+  background: transparent !important;
+  border: none !important;
+  color: #94a3b8 !important;
+  font-size: 22px !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  padding: 4px 8px !important;
+  border-radius: 8px !important;
+  transition: color 0.2s ease !important;
+}
+
+.pwa-btn-close:hover {
+  color: #ffffff !important;
+}
+
+/* Light Mode Overrides for PWA Banner */
+body.light-mode .pwa-smart-banner,
+[data-theme="light"] .pwa-smart-banner {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.15), 0 0 20px rgba(79, 70, 229, 0.12) !important;
+}
+
+body.light-mode .pwa-banner-text strong,
+[data-theme="light"] .pwa-banner-text strong {
+  color: #0f172a !important;
+}
+
+body.light-mode .pwa-banner-text span,
+[data-theme="light"] .pwa-banner-text span {
+  color: #64748b !important;
+}
+
+body.light-mode .pwa-btn-close,
+[data-theme="light"] .pwa-btn-close {
+  color: #64748b !important;
+}
+
+body.light-mode .pwa-btn-close:hover,
+[data-theme="light"] .pwa-btn-close:hover {
+  color: #0f172a !important;
+}
+
+/* PWA Install Trigger Button in Navbar */
+.pwa-install-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(6, 182, 212, 0.15)) !important;
+  border: 1px solid rgba(99, 102, 241, 0.35) !important;
+  color: #38bdf8 !important;
+  padding: 8px 16px !important;
+  border-radius: 12px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+}
+
+.pwa-install-trigger:hover {
+  background: linear-gradient(135deg, #6366f1, #06b6d4) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.35) !important;
+}
+
+body.light-mode .pwa-install-trigger,
+[data-theme="light"] .pwa-install-trigger {
+  background: rgba(79, 70, 229, 0.08) !important;
+  border-color: rgba(79, 70, 229, 0.3) !important;
+  color: #4f46e5 !important;
+}
+
+body.light-mode .pwa-install-trigger:hover,
+[data-theme="light"] .pwa-install-trigger:hover {
+  background: linear-gradient(135deg, #4f46e5, #0891b2) !important;
+  color: #ffffff !important;
+}
+
+/* iOS Installation Guide Modal */
+.pwa-install-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.pwa-install-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pwa-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+.pwa-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  animation: pwaModalPop 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes pwaModalPop {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.pwa-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.pwa-modal-header h4 {
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0;
+  font-weight: 700;
+}
+
+.pwa-modal-close {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.pwa-modal-body p {
+  font-size: 14px;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.pwa-step {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #e2e8f0;
+}
+
+.pwa-step i {
+  color: #38bdf8;
+  margin: 0 4px;
+}
+
+.pwa-modal-gotit {
+  width: 100% !important;
+  margin-top: 14px !important;
+}
+
+body.light-mode .pwa-modal-card,
+[data-theme="light"] .pwa-modal-card {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+body.light-mode .pwa-modal-header h4,
+[data-theme="light"] .pwa-modal-header h4 {
+  color: #0f172a !important;
+}
+
+body.light-mode .pwa-modal-body p,
+[data-theme="light"] .pwa-modal-body p {
+  color: #334155 !important;
+}
+
+body.light-mode .pwa-step,
+[data-theme="light"] .pwa-step {
+  background: #f1f5f9 !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  color: #1e293b !important;
+}
+
+/* =====================================================================
+   APP DOWNLOAD BUTTON & INTERACTIVE QR SCANNER MODAL ARCHITECTURE
+===================================================================== */
+.app-download-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.18), rgba(6, 182, 212, 0.18)) !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.45) !important;
+  color: #38bdf8 !important;
+  padding: 8px 18px !important;
+  border-radius: 9999px !important;
+  font-family: var(--font-mono) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  cursor: pointer !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  white-space: nowrap !important;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.2) !important;
+  text-decoration: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.app-download-btn:hover {
+  background: linear-gradient(135deg, #6366f1, #06b6d4) !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.45) !important;
+}
+
+.app-download-btn:active {
+  transform: scale(0.95) !important;
+}
+
+body.light-mode .app-download-btn,
+[data-theme="light"] .app-download-btn {
+  background: rgba(79, 70, 229, 0.08) !important;
+  border-color: rgba(79, 70, 229, 0.35) !important;
+  color: #4f46e5 !important;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.12) !important;
+}
+
+body.light-mode .app-download-btn:hover,
+[data-theme="light"] .app-download-btn:hover {
+  background: linear-gradient(135deg, #4f46e5, #0891b2) !important;
+  color: #ffffff !important;
+}
+
+@media (max-width: 991px) {
+  .app-download-btn {
+    width: 100% !important;
+    min-height: 48px !important;
+    justify-content: center !important;
+    font-size: 15px !important;
+    border-radius: 14px !important;
+    margin: 4px 0 10px !important;
+  }
+}
+
+/* Scanner Modal Backdrop */
+.scanner-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+  background: rgba(2, 6, 23, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scanner-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Scanner Card */
+.scanner-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: #090d16;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 26px;
+  padding: 26px 22px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(99, 102, 241, 0.3);
+  text-align: center;
+  animation: scannerCardPop 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes scannerCardPop {
+  from { transform: scale(0.9) translateY(20px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.scanner-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.scanner-modal-close:hover {
+  color: #ffffff;
+}
+
+.scanner-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.scanner-badge-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: rgba(99, 102, 241, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scanner-badge-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scanner-header-text h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0 0 3px 0;
+  font-weight: 700;
+}
+
+.scanner-header-text p {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Scanner Frame & Laser Beam Animation */
+.scanner-frame-wrapper {
+  margin: 18px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scanner-frame {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  padding: 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Corner Reticles */
+.scanner-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: #38bdf8;
+  border-style: solid;
+  pointer-events: none;
+  filter: drop-shadow(0 0 6px #38bdf8);
+}
+
+.corner-tl { top: 8px; left: 8px; border-width: 3px 0 0 3px; border-top-left-radius: 8px; }
+.corner-tr { top: 8px; right: 8px; border-width: 3px 3px 0 0; border-top-right-radius: 8px; }
+.corner-bl { bottom: 8px; left: 8px; border-width: 0 0 3px 3px; border-bottom-left-radius: 8px; }
+.corner-br { bottom: 8px; right: 8px; border-width: 0 3px 3px 0; border-bottom-right-radius: 8px; }
+
+/* Laser Scanner Beam */
+.scanner-laser {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #38bdf8 30%, #06b6d4 70%, transparent 100%);
+  box-shadow: 0 0 14px #38bdf8, 0 0 28px #06b6d4;
+  border-radius: 2px;
+  z-index: 10;
+  pointer-events: none;
+  animation: laserScan 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes laserScan {
+  0% { top: 12px; opacity: 0.2; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { top: 224px; opacity: 0.2; }
+}
+
+.scanner-qr-box {
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scanner-qr-img {
+  width: 195px;
+  height: 195px;
+  display: block;
+  border-radius: 8px;
+}
+
+.scanner-brand-pill {
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: 0.08em;
+}
+
+.scanner-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 5px 14px;
+  border-radius: 9999px;
+}
+
+.scanner-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+  animation: scanDotPulse 1.6s infinite;
+}
+
+@keyframes scanDotPulse {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+
+.scanner-status-text {
+  font-size: 12px;
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* Actions in Scanner Modal */
+.scanner-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.scanner-btn-primary {
+  width: 100%;
+  min-height: 48px;
+  background: linear-gradient(135deg, #6366f1, #06b6d4) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 14px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4) !important;
+  transition: transform 0.15s ease !important;
+}
+
+.scanner-btn-primary:active {
+  transform: scale(0.96) !important;
+}
+
+.scanner-btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.scanner-btn-secondary {
+  flex: 1;
+  min-height: 42px;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  color: #cbd5e1 !important;
+  border-radius: 12px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.scanner-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+}
+
+.scanner-copy-toast {
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #10b981;
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scanner-copy-toast.show {
+  bottom: 16px;
+  opacity: 1;
+}
+
+/* Light Mode Overrides for Scanner Modal */
+body.light-mode .scanner-modal-card,
+[data-theme="light"] .scanner-modal-card {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.14) !important;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.2), 0 0 35px rgba(79, 70, 229, 0.15) !important;
+}
+
+body.light-mode .scanner-header-text h3,
+[data-theme="light"] .scanner-header-text h3 {
+  color: #0f172a !important;
+}
+
+body.light-mode .scanner-header-text p,
+[data-theme="light"] .scanner-header-text p {
+  color: #64748b !important;
+}
+
+body.light-mode .scanner-frame,
+[data-theme="light"] .scanner-frame {
+  background: #f8fafc !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+body.light-mode .scanner-btn-secondary,
+[data-theme="light"] .scanner-btn-secondary {
+  background: #f1f5f9 !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  color: #334155 !important;
+}
+
+body.light-mode .scanner-btn-secondary:hover,
+[data-theme="light"] .scanner-btn-secondary:hover {
+  background: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+body.light-mode .scanner-modal-close,
+[data-theme="light"] .scanner-modal-close {
+  color: #64748b !important;
+}
+
+body.light-mode .scanner-modal-close:hover,
+[data-theme="light"] .scanner-modal-close:hover {
+  color: #0f172a !important;
+}
+
+
 
 
 
