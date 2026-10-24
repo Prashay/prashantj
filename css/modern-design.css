@@ -5910,7 +5910,7 @@ body.light-mode .sidebar_tag_chip,
 .ai-twin-launcher {
   position: fixed;
   bottom: 24px;
-  right: 24px;
+  right: 88px;
   z-index: 9980;
   display: flex;
   align-items: center;
@@ -5926,6 +5926,14 @@ body.light-mode .sidebar_tag_chip,
   box-shadow: 0 10px 30px -5px rgba(2, 132, 199, 0.5),
               0 0 20px rgba(99, 102, 241, 0.35);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (max-width: 991px) {
+  .ai-twin-launcher {
+    bottom: 84px !important;
+    right: 18px !important;
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+  }
 }
 .ai-twin-launcher:hover {
   transform: translateY(-3px) scale(1.03);
@@ -6859,41 +6867,7 @@ body.light-mode .blueprint-node-title,
   color: #0f172a;
 }
 
-body.light-mode .sim-widget-card,
-[data-theme="light"] .sim-widget-card {
-  background: #ffffff;
-  border-color: rgba(15, 23, 42, 0.12);
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.08);
-}
-body.light-mode .sim-title,
-[data-theme="light"] .sim-title {
-  color: #0f172a;
-}
-body.light-mode .sim-controls,
-[data-theme="light"] .sim-controls {
-  background: #f8fafc;
-  border-color: rgba(15, 23, 42, 0.08);
-}
-body.light-mode .sim-slider-name,
-[data-theme="light"] .sim-slider-name {
-  color: #1e293b;
-}
-body.light-mode .sim-arch-title,
-[data-theme="light"] .sim-arch-title {
-  color: #0f172a;
-}
-body.light-mode .sim-arch-notes,
-[data-theme="light"] .sim-arch-notes {
-  color: #475569;
-}
-body.light-mode .nav-cmd-btn,
-[data-theme="light"] .nav-cmd-btn {
-  background: #f1f5f9;
-  border-color: rgba(15, 23, 42, 0.1);
-  color: #475569 !important;
-}
-
-/* Blueprint Node Step Cards */
+/* Blueprint Node Step Cards (Base / Dark Mode) */
 #blueprintNodesContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -6952,7 +6926,7 @@ body.light-mode .nav-cmd-btn,
   margin: 0;
 }
 
-/* Status Pills for Simulator */
+/* Status Pills for Simulator (Base / Dark Mode) */
 .status-pill {
   font-size: 11px;
   font-weight: 700;
@@ -6984,19 +6958,242 @@ body.light-mode .nav-cmd-btn,
   50% { opacity: 0.6; }
 }
 
-/* Light mode for blueprint nodes */
+body.light-mode .sim-widget-card,
+[data-theme="light"] .sim-widget-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 15px 45px -10px rgba(15, 23, 42, 0.08) !important;
+}
+body.light-mode .sim-widget-card::before,
+[data-theme="light"] .sim-widget-card::before {
+  background: linear-gradient(90deg, #0284c7, #6366f1, #10b981) !important;
+}
+body.light-mode .sim-badge,
+[data-theme="light"] .sim-badge {
+  background: rgba(2, 132, 199, 0.08) !important;
+  color: #0284c7 !important;
+  border: 1px solid rgba(2, 132, 199, 0.28) !important;
+}
+body.light-mode .sim-title,
+[data-theme="light"] .sim-title {
+  color: #0f172a !important;
+}
+body.light-mode .sim-subtitle,
+[data-theme="light"] .sim-subtitle {
+  color: #475569 !important;
+}
+body.light-mode .sim-controls,
+[data-theme="light"] .sim-controls {
+  background: #f8fafc !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+body.light-mode .sim-slider-name,
+[data-theme="light"] .sim-slider-name {
+  color: #1e293b !important;
+}
+body.light-mode .sim-display-stores,
+[data-theme="light"] .sim-display-stores,
+body.light-mode #simDisplayStores,
+[data-theme="light"] #simDisplayStores {
+  color: #0f172a !important;
+}
+body.light-mode .sim-slider-val,
+[data-theme="light"] .sim-slider-val,
+body.light-mode #simDisplayTps,
+[data-theme="light"] #simDisplayTps {
+  color: #0284c7 !important;
+}
+body.light-mode .sim-slider-ticks span,
+[data-theme="light"] .sim-slider-ticks span {
+  color: #475569 !important;
+  font-weight: 600 !important;
+}
+body.light-mode .sim-range-input,
+[data-theme="light"] .sim-range-input {
+  background: rgba(15, 23, 42, 0.12) !important;
+}
+body.light-mode .sim-range-input::-webkit-slider-thumb,
+[data-theme="light"] .sim-range-input::-webkit-slider-thumb {
+  background: #0284c7 !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(2, 132, 199, 0.5) !important;
+}
+
+/* Simulator Architecture Comparison Cards in Light Mode */
+body.light-mode .sim-arch-card,
+[data-theme="light"] .sim-arch-card {
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05) !important;
+}
+body.light-mode .sim-arch-modern,
+[data-theme="light"] .sim-arch-modern {
+  background: linear-gradient(150deg, #f0fdf4 0%, #ffffff 100%) !important;
+  border: 1px solid rgba(16, 185, 129, 0.35) !important;
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.08) !important;
+}
+body.light-mode .sim-arch-legacy,
+[data-theme="light"] .sim-arch-legacy {
+  background: linear-gradient(150deg, #fff1f2 0%, #ffffff 100%) !important;
+  border: 1px solid rgba(239, 68, 68, 0.25) !important;
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.06) !important;
+}
+body.light-mode .sim-arch-title,
+[data-theme="light"] .sim-arch-title {
+  color: #0f172a !important;
+}
+body.light-mode .sim-status-optimal,
+[data-theme="light"] .sim-status-optimal {
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: #047857 !important;
+  border: 1px solid rgba(16, 185, 129, 0.35) !important;
+}
+body.light-mode .sim-status-degraded,
+[data-theme="light"] .sim-status-degraded {
+  background: rgba(239, 68, 68, 0.1) !important;
+  color: #b91c1c !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+}
+body.light-mode .sim-arch-modern .sim-p99-num,
+[data-theme="light"] .sim-arch-modern .sim-p99-num {
+  color: #059669 !important;
+}
+body.light-mode .sim-arch-legacy .sim-p99-num,
+[data-theme="light"] .sim-arch-legacy .sim-p99-num {
+  color: #dc2626 !important;
+}
+body.light-mode .sim-p99-unit,
+[data-theme="light"] .sim-p99-unit {
+  color: #64748b !important;
+}
+body.light-mode .sim-meter-track,
+[data-theme="light"] .sim-meter-track {
+  background: rgba(15, 23, 42, 0.08) !important;
+}
+body.light-mode .sim-arch-modern .sim-meter-fill,
+[data-theme="light"] .sim-arch-modern .sim-meter-fill {
+  background: linear-gradient(90deg, #10b981, #0284c7) !important;
+}
+body.light-mode .sim-arch-legacy .sim-meter-fill,
+[data-theme="light"] .sim-arch-legacy .sim-meter-fill {
+  background: linear-gradient(90deg, #f59e0b, #ef4444) !important;
+}
+body.light-mode .sim-arch-notes,
+[data-theme="light"] .sim-arch-notes {
+  color: #334155 !important;
+  line-height: 1.55 !important;
+}
+body.light-mode .sim-arch-notes strong,
+[data-theme="light"] .sim-arch-notes strong {
+  color: #0f172a !important;
+}
+
+/* Status Pills in Light Mode */
+body.light-mode .status-peak,
+[data-theme="light"] .status-peak {
+  background: rgba(2, 132, 199, 0.1) !important;
+  color: #0284c7 !important;
+  border: 1px solid rgba(2, 132, 199, 0.3) !important;
+}
+body.light-mode .status-healthy,
+[data-theme="light"] .status-healthy {
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: #047857 !important;
+  border: 1px solid rgba(16, 185, 129, 0.35) !important;
+}
+body.light-mode .status-critical,
+[data-theme="light"] .status-critical {
+  background: rgba(239, 68, 68, 0.12) !important;
+  color: #b91c1c !important;
+  border: 1px solid rgba(239, 68, 68, 0.35) !important;
+}
+
+/* Navbar Buttons in Light Mode */
+body.light-mode .nav-recruiter-btn,
+[data-theme="light"] .nav-recruiter-btn {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.08), rgba(99, 102, 241, 0.08)) !important;
+  border: 1px solid rgba(2, 132, 199, 0.35) !important;
+  color: #0284c7 !important;
+  font-weight: 700 !important;
+}
+body.light-mode .nav-recruiter-btn:hover,
+[data-theme="light"] .nav-recruiter-btn:hover {
+  background: linear-gradient(135deg, #0284c7, #4f46e5) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3) !important;
+}
+body.light-mode .nav-cmd-btn,
+[data-theme="light"] .nav-cmd-btn {
+  background: #f1f5f9 !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  color: #334155 !important;
+  font-weight: 600 !important;
+}
+body.light-mode .nav-cmd-btn:hover,
+[data-theme="light"] .nav-cmd-btn:hover {
+  background: #e2e8f0 !important;
+  color: #0284c7 !important;
+  border-color: rgba(2, 132, 199, 0.3) !important;
+}
+
+/* Blueprint Canvas & Node Step Cards in Light Mode */
+body.light-mode .blueprint-canvas,
+[data-theme="light"] .blueprint-canvas {
+  background: radial-gradient(rgba(2, 132, 199, 0.12) 1px, transparent 1px) 0 0 / 22px 22px, #f8fafc !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+}
+body.light-mode .blueprint-node,
+[data-theme="light"] .blueprint-node {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06) !important;
+}
+body.light-mode .blueprint-node.highlighted,
+[data-theme="light"] .blueprint-node.highlighted {
+  background: #f0f9ff !important;
+  border-color: #0284c7 !important;
+  box-shadow: 0 4px 18px rgba(2, 132, 199, 0.15) !important;
+}
+body.light-mode .blueprint-node-tag,
+[data-theme="light"] .blueprint-node-tag {
+  color: #64748b !important;
+}
+body.light-mode .blueprint-node-title,
+[data-theme="light"] .blueprint-node-title {
+  color: #0f172a !important;
+}
+body.light-mode .blueprint-node-metric,
+[data-theme="light"] .blueprint-node-metric {
+  color: #0284c7 !important;
+}
+body.light-mode .blueprint-connector-label,
+[data-theme="light"] .blueprint-connector-label {
+  color: #64748b !important;
+}
 body.light-mode .bp-node-card,
 [data-theme="light"] .bp-node-card {
-  background: #f8fafc;
-  border-color: rgba(15, 23, 42, 0.08);
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04) !important;
+}
+body.light-mode .bp-node-card:hover,
+body.light-mode .bp-node-card:focus,
+[data-theme="light"] .bp-node-card:hover,
+[data-theme="light"] .bp-node-card:focus {
+  background: #f0f9ff !important;
+  border-color: #0284c7 !important;
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.15) !important;
 }
 body.light-mode .bp-node-content h5,
 [data-theme="light"] .bp-node-content h5 {
-  color: #0f172a;
+  color: #0f172a !important;
+}
+body.light-mode .bp-node-sub,
+[data-theme="light"] .bp-node-sub {
+  color: #0284c7 !important;
 }
 body.light-mode .bp-node-desc,
 [data-theme="light"] .bp-node-desc {
-  color: #475569;
+  color: #475569 !important;
 }
 
 

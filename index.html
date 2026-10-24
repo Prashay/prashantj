@@ -353,11 +353,11 @@
 
 				<div class="sim-controls">
 					<div class="sim-slider-label-row">
-						<span class="sim-slider-name"><i class="fa fa-cubes text-info mr-1"></i> Active Edge Store Clusters: <strong id="simDisplayStores" class="text-white">1,621</strong></span>
+						<span class="sim-slider-name"><i class="fa fa-cubes text-info mr-1"></i> Active Edge Store Clusters: <strong id="simDisplayStores" class="sim-display-stores">1,621</strong></span>
 						<span class="sim-slider-val"><i class="fa fa-tachometer mr-1"></i> Ingress Throughput: <span id="simDisplayTps">230,000 TPS</span></span>
 					</div>
 					<input type="range" class="sim-range-input" id="simStoreSlider" min="10" max="1621" value="1621" step="1" aria-label="Concurrency Store Slider">
-					<div class="d-flex justify-content-between mt-2" style="font-size: 11px; color: #64748b; font-family: monospace;">
+					<div class="d-flex justify-content-between mt-2 sim-slider-ticks">
 						<span>10 Stores (Staging Baseline)</span>
 						<span>800 Stores (Mid-Day Volume)</span>
 						<span>1,621 Stores (Peak BFCM Production)</span>
