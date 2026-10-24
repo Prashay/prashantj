@@ -166,6 +166,18 @@
 									<span>Download App</span>
 								</button>
 							</li>
+							<li class="nav-item">
+								<button class="nav-recruiter-btn" type="button" onclick="openRecruiterModal()" title="30-Second Executive Summary for Recruiters">
+									<i class="fa fa-bolt"></i>
+									<span>Recruiter Fast-Track</span>
+								</button>
+							</li>
+							<li class="nav-item d-none d-lg-block">
+								<button class="nav-cmd-btn" type="button" onclick="openCommandPalette()" title="Spotlight Command Palette (Ctrl+K / ⌘K)">
+									<i class="fa fa-terminal"></i>
+									<span>⌘K</span>
+								</button>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -323,6 +335,71 @@
 					<div class="telemetry-metric telemetry-metric-gradient">2 Min</div>
 					<div class="telemetry-label">Deployment Speed</div>
 					<div class="telemetry-sub">Cut from 7 min via PerfX and SonarQube quality gates</div>
+				</div>
+			</div>
+
+			<!-- Interactive P99 Latency & Concurrency Stress Simulator -->
+			<div class="sim-widget-card" id="latencySimulatorCard">
+				<div class="sim-header-row">
+					<div>
+						<span class="sim-badge"><i class="fa fa-sliders"></i> Interactive Architectural Simulator</span>
+						<h3 class="sim-title">Live P99 Latency & Concurrency Simulator</h3>
+						<p class="sim-subtitle">Simulate real-time store-edge scale from 10 to 1,621 stores and compare Reactive Non-Blocking architecture against Legacy Monoliths.</p>
+					</div>
+					<div id="simDisplayStatus">
+						<span class="status-pill status-peak">MAX PRODUCTION SCALE (1,621 STORES) • ZERO DROPPED TX</span>
+					</div>
+				</div>
+
+				<div class="sim-controls">
+					<div class="sim-slider-label-row">
+						<span class="sim-slider-name"><i class="fa fa-cubes text-info mr-1"></i> Active Edge Store Clusters: <strong id="simDisplayStores" class="text-white">1,621</strong></span>
+						<span class="sim-slider-val"><i class="fa fa-tachometer mr-1"></i> Ingress Throughput: <span id="simDisplayTps">230,000 TPS</span></span>
+					</div>
+					<input type="range" class="sim-range-input" id="simStoreSlider" min="10" max="1621" value="1621" step="1" aria-label="Concurrency Store Slider">
+					<div class="d-flex justify-content-between mt-2" style="font-size: 11px; color: #64748b; font-family: monospace;">
+						<span>10 Stores (Staging Baseline)</span>
+						<span>800 Stores (Mid-Day Volume)</span>
+						<span>1,621 Stores (Peak BFCM Production)</span>
+					</div>
+				</div>
+
+				<div class="sim-comparison-grid">
+					<!-- Modern Reactive Architecture (Prashant's Design) -->
+					<div class="sim-arch-card sim-arch-modern">
+						<div class="sim-arch-header">
+							<div class="sim-arch-title"><i class="fa fa-check-circle text-success mr-1"></i> Lowe's Tachyon Reactive Architecture</div>
+							<span class="sim-arch-status sim-status-optimal">NON-BLOCKING</span>
+						</div>
+						<div class="sim-kpi-large">
+							<span class="sim-p99-num" id="simDisplayReactive">170ms P99</span>
+							<span class="sim-p99-unit">deterministic latency</span>
+						</div>
+						<div class="sim-meter-track">
+							<div class="sim-meter-fill" style="width: 15%;"></div>
+						</div>
+						<div class="sim-arch-notes">
+							<strong>Why it scales:</strong> Netty non-blocking event loops, Kafka partition-key hashing, Redis in-memory cache, and reactive backpressure buffering. <strong>Zero thread starvation at 2.3M transactions.</strong>
+						</div>
+					</div>
+
+					<!-- Legacy Monolith Architecture -->
+					<div class="sim-arch-card sim-arch-legacy">
+						<div class="sim-arch-header">
+							<div class="sim-arch-title"><i class="fa fa-exclamation-triangle text-danger mr-1"></i> Legacy Synchronous Monolith</div>
+							<span class="sim-arch-status sim-status-degraded">THREAD BOUND</span>
+						</div>
+						<div class="sim-kpi-large">
+							<span class="sim-p99-num" id="simDisplayLegacy">2,180ms</span>
+							<span class="sim-p99-unit">cascading bottleneck</span>
+						</div>
+						<div class="sim-meter-track">
+							<div class="sim-meter-fill" id="simLegacyBar" style="width: 95%;"></div>
+						</div>
+						<div class="sim-arch-notes">
+							<strong>Failure point:</strong> Synchronous thread-per-request pools block on DB disk I/O, connection exhaustion causes cascading timeouts, and memory pressure triggers long GC pauses.
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -1454,6 +1531,339 @@
 	</footer>
 	<!--================End Footer Area =================-->
 
+	<!-- =========================================================================
+	     2026 COMPETITIVE ADVANTAGE SUITE MARKUP:
+	     1. Recruiter Fast-Track 30-Second Dossier Modal
+	     2. Interactive System Design Blueprint Modal
+	     3. Spotlight Command Palette (Ctrl+K / Cmd+K)
+	     4. "Ask Prashant's AI Twin" Floating Assistant
+	     ========================================================================= -->
+
+	<!-- 1. Recruiter Fast-Track 30-Second Dossier Modal -->
+	<div id="recruiterDossierModal" class="recruiter-modal-backdrop modal-custom-backdrop" aria-hidden="true">
+		<div class="recruiter-modal-dialog" onclick="event.stopPropagation()">
+			<div class="recruiter-header">
+				<div>
+					<span class="recruiter-pill"><i class="fa fa-bolt"></i> 30-Second Fast-Track Dossier</span>
+					<h3 class="recruiter-title">Prashant Kumar Jha — Executive Summary</h3>
+					<span style="font-size: 12.5px; color: #38bdf8; font-weight: 600;">Target Roles: Staff / Lead Backend Engineer • Distributed Systems Architect</span>
+				</div>
+				<button type="button" class="ai-twin-close-btn" onclick="closeRecruiterModal()" aria-label="Close modal">
+					<i class="fa fa-times"></i>
+				</button>
+			</div>
+			<div class="recruiter-body">
+				<!-- KPI Quick Grid -->
+				<div class="recruiter-quick-grid">
+					<div class="recruiter-card-kpi">
+						<div class="recruiter-kpi-num">8+ Yrs</div>
+						<div class="recruiter-kpi-sub">Enterprise Engineering</div>
+					</div>
+					<div class="recruiter-card-kpi">
+						<div class="recruiter-kpi-num">1,621</div>
+						<div class="recruiter-kpi-sub">Stores Orchestrated (Lowe's)</div>
+					</div>
+					<div class="recruiter-card-kpi">
+						<div class="recruiter-kpi-num">170ms</div>
+						<div class="recruiter-kpi-sub">Deterministic P99 Latency</div>
+					</div>
+					<div class="recruiter-card-kpi">
+						<div class="recruiter-kpi-num">2.3M</div>
+						<div class="recruiter-kpi-sub">Peak BFCM Transactions</div>
+					</div>
+				</div>
+
+				<!-- Core Competency Badges -->
+				<div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(148, 163, 184, 0.12); border-radius: 12px; padding: 14px 16px;">
+					<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #94a3b8; font-weight: 700; margin-bottom: 8px;">
+						Core Production Stack & Disciplines
+					</div>
+					<div class="tech-badge-container mb-0" style="gap: 6px;">
+						<span class="badge-pill">Java 17/21</span>
+						<span class="badge-pill">Spring Boot</span>
+						<span class="badge-pill">Reactive Netty</span>
+						<span class="badge-pill">Apache Kafka</span>
+						<span class="badge-pill">Redis / Hazelcast</span>
+						<span class="badge-pill">Kubernetes & Docker</span>
+						<span class="badge-pill">AWS & Azure</span>
+						<span class="badge-pill">Canary CI/CD & Snyk</span>
+						<span class="badge-pill">MCP & Agentic AI</span>
+					</div>
+				</div>
+
+				<!-- 1-Click Copy Pitch Box -->
+				<div class="recruiter-pitch-box">
+					<div class="recruiter-pitch-title">
+						<span><i class="fa fa-quote-left text-info mr-1"></i> 1-Click Pitch (Copy to ATS / Hiring Manager / Slack)</span>
+						<span style="font-size: 11px; color: #38bdf8; font-weight: normal;">Formatted plain text</span>
+					</div>
+					<p class="recruiter-pitch-text">
+						"Senior Backend Engineer and Technical Lead with 8+ years architecting resilient, distributed systems at scale. At Lowe's India, scaled the Tachyon edge platform across 1,621 stores with 170ms P99 latency and 2.3M daily transactions. Led 10+ engineers across IBM & Lowe's in Java 17, Spring Boot, Kafka, Kubernetes, and 2026 Agentic AI / MCP integration."
+					</p>
+				</div>
+			</div>
+			<div class="recruiter-footer-actions">
+				<button type="button" class="btn-recruiter-action btn-recruiter-secondary" id="btnCopyPitch" onclick="copyRecruiterPitch()">
+					<i class="fa fa-copy"></i>
+					<span>Copy Pitch to Clipboard</span>
+				</button>
+				<a href="img/Prashant_Kumar_Jha_Resume.pdf" download class="btn-recruiter-action btn-recruiter-primary">
+					<i class="fa fa-download"></i>
+					<span>Download Official Resume (PDF)</span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 2. Interactive System Design Blueprint Modal -->
+	<div id="blueprintModal" class="blueprint-modal-backdrop modal-custom-backdrop" aria-hidden="true">
+		<div class="blueprint-modal-dialog" onclick="event.stopPropagation()">
+			<div class="blueprint-header">
+				<div>
+					<span class="blueprint-tag-pill" id="blueprintBadge">HIGH-CONCURRENCY DISTRIBUTED EDGE & CLUSTER</span>
+					<h3 class="blueprint-title" id="blueprintTitle">Lowe's Tachyon Distributed Store Architecture</h3>
+					<span style="font-size: 12px; color: #38bdf8; font-family: monospace;" id="blueprintMetrics">1,621 Stores • 2.3M Transactions/Day • 170ms P99</span>
+				</div>
+				<button type="button" class="ai-twin-close-btn" onclick="closeBlueprintModal()" aria-label="Close modal">
+					<i class="fa fa-times"></i>
+				</button>
+			</div>
+			<div class="blueprint-body">
+				<p style="font-size: 13.5px; color: #cbd5e1; line-height: 1.6; margin: 0;" id="blueprintDescription">
+					High-throughput, event-driven distributed checkout & inventory synchronization architecture connecting 1,621 edge retail store servers to cloud microservices with sub-second real-time consistency.
+				</p>
+				<!-- Topology Canvas -->
+				<div class="blueprint-canvas">
+					<div class="blueprint-topology-flow">
+						<div class="blueprint-node highlighted">
+							<span class="blueprint-node-tag">Edge Tier</span>
+							<div class="blueprint-node-title">1,621 Store Nodes</div>
+							<span class="blueprint-node-metric">POS Buffers</span>
+						</div>
+						<div class="blueprint-connector">
+							<div class="blueprint-connector-line"></div>
+							<span class="blueprint-connector-label">mTLS 2.3M req/d</span>
+						</div>
+						<div class="blueprint-node">
+							<span class="blueprint-node-tag">Ingress</span>
+							<div class="blueprint-node-title">Envoy Gateway</div>
+							<span class="blueprint-node-metric">Rate Limited</span>
+						</div>
+						<div class="blueprint-connector">
+							<div class="blueprint-connector-line"></div>
+							<span class="blueprint-connector-label">Kafka Partitions</span>
+						</div>
+						<div class="blueprint-node highlighted">
+							<span class="blueprint-node-tag">Reactive Core</span>
+							<div class="blueprint-node-title">Spring Boot Netty</div>
+							<span class="blueprint-node-metric">170ms P99</span>
+						</div>
+						<div class="blueprint-connector">
+							<div class="blueprint-connector-line"></div>
+							<span class="blueprint-connector-label">In-Memory Cache</span>
+						</div>
+						<div class="blueprint-node">
+							<span class="blueprint-node-tag">Storage Tier</span>
+							<div class="blueprint-node-title">Redis & Cassandra</div>
+							<span class="blueprint-node-metric">&lt; 5ms Read</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Step-by-Step Architectural Node Cards -->
+				<div>
+					<h4 style="font-size: 14px; font-weight: 700; color: #f8fafc; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;">
+						<i class="fa fa-sitemap text-info mr-1"></i> Component Breakdown & Resilience Controls
+					</h4>
+					<div id="blueprintNodesContainer"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 3. Spotlight Command Palette (Ctrl+K / Cmd+K) -->
+	<div id="commandPaletteModal" class="cmd-palette-backdrop modal-custom-backdrop" aria-hidden="true">
+		<div class="cmd-palette-modal" onclick="event.stopPropagation()">
+			<div class="cmd-search-bar">
+				<i class="fa fa-search cmd-search-icon"></i>
+				<input type="text" id="cmdPaletteInput" class="cmd-search-input" placeholder="Type a command, technology, or jump to section... (e.g. Lowe's, Kafka, Resume, AI)" autocomplete="off" spellcheck="false">
+				<span class="cmd-kbd-badge">ESC to close</span>
+			</div>
+			<div class="cmd-results-container" id="cmdResultsContainer">
+				<!-- Fast-Track / Highlight Actions -->
+				<div class="cmd-group">
+					<div class="cmd-category-header">⚡ Recruiter & Executive Shortcuts</div>
+					<div class="cmd-item" data-cmd-search="recruiter fast track summary hire salary contact" onclick="closeCommandPalette(); openRecruiterModal();">
+						<div class="cmd-item-left">
+							<span class="cmd-item-icon"><i class="fa fa-bolt"></i></span>
+							<div>
+								<div class="cmd-item-label">Open Recruiter Fast-Track (30s Dossier)</div>
+								<div class="cmd-item-desc">Core metrics, 1-click pitch copy, and role alignment</div>
+							</div>
+						</div>
+						<span class="cmd-kbd-badge">↵ Open</span>
+					</div>
+					<a href="img/Prashant_Kumar_Jha_Resume.pdf" download class="cmd-item" data-cmd-search="resume download cv pdf">
+						<div class="cmd-item-left">
+							<span class="cmd-item-icon"><i class="fa fa-file-pdf-o"></i></span>
+							<div>
+								<div class="cmd-item-label">Download Official Resume (PDF)</div>
+								<div class="cmd-item-desc">Latest 2026 comprehensive backend & leadership resume</div>
+							</div>
+						</div>
+						<span class="cmd-kbd-badge">Download</span>
+					</a>
+					<div class="cmd-item" data-cmd-search="ai twin ask chat agentic copilot" onclick="closeCommandPalette(); toggleAITwin(true);">
+						<div class="cmd-item-left">
+							<span class="cmd-item-icon"><i class="fa fa-magic"></i></span>
+							<div>
+								<div class="cmd-item-label">Ask Prashant's AI Architecture Twin</div>
+								<div class="cmd-item-desc">Interactive conversational assistant for deep Q&A</div>
+							</div>
+						</div>
+						<span class="cmd-kbd-badge">Chat</span>
+					</div>
+				</div>
+
+				<!-- Architecture Blueprints -->
+				<div class="cmd-group">
+					<div class="cmd-category-header">📐 Interactive System Blueprints</div>
+					<div class="cmd-item" data-cmd-search="lowe lowes tachyon 1621 stores scale architecture retail pos kafka redis" onclick="closeCommandPalette(); openBlueprintModal('lowes');">
+						<div class="cmd-item-left">
+							<span class="cmd-item-icon"><i class="fa fa-cubes"></i></span>
+							<div>
+								<div class="cmd-item-label">Lowe's Tachyon Blueprint (1,621 Stores)</div>
+								<div class="cmd-item-desc">Event-driven retail edge-to-cloud reactive topology</div>
+							</div>
+						</div>
+						<span class="cmd-kbd-badge">Blueprint</span>
+					</div>
+					<div class="cmd-item" data-cmd-search="ibm cicd control plane canary snyk kubernetes cloud pipeline" onclick="closeCommandPalette(); openBlueprintModal('ibm');">
+						<div class="cmd-item-left">
+							<span class="cmd-item-icon"><i class="fa fa-shield"></i></span>
+							<div>
+								<div class="cmd-item-label">IBM Enterprise CI/CD Control Plane</div>
+								<div class="cmd-item-desc">Zero-vulnerability canary deployment pipeline</div>
+							</div>
+						</div>
+						<span class="cmd-kbd-badge">Blueprint</span>
+					</div>
+					<div class="cmd-item" data-cmd-search="simulator latency p99 stress test 1621 stores concurrency" onclick="closeCommandPalette(); document.getElementById('latencySimulatorCard').scrollIntoView({behavior: 'smooth'});">
+						<div class="cmd-item-left">
+							<span class="cmd-item-icon"><i class="fa fa-sliders"></i></span>
+							<div>
+								<div class="cmd-item-label">Jump to P99 Latency & Concurrency Simulator</div>
+								<div class="cmd-item-desc">Live reactive benchmark against legacy monoliths</div>
+							</div>
+						</div>
+						<span class="cmd-kbd-badge">Jump</span>
+					</div>
+				</div>
+
+				<!-- Navigation -->
+				<div class="cmd-group">
+					<div class="cmd-category-header">🧭 Navigation</div>
+					<a href="index.html" class="cmd-item" data-cmd-search="home telemetry intro welcome">
+						<div class="cmd-item-left">
+							<span class="cmd-item-icon"><i class="fa fa-home"></i></span>
+							<div>
+								<div class="cmd-item-label">Home Page & Telemetry Dashboard</div>
+								<div class="cmd-item-desc">Core introduction, metrics, and live projects</div>
+							</div>
+						</div>
+						<span class="cmd-kbd-badge">Page</span>
+					</a>
+					<a href="projects.html" class="cmd-item" data-cmd-search="work projects case studies lowes ibm certifications">
+						<div class="cmd-item-left">
+							<span class="cmd-item-icon"><i class="fa fa-briefcase"></i></span>
+							<div>
+								<div class="cmd-item-label">Work & Enterprise Case Studies</div>
+								<div class="cmd-item-desc">Deep-dive architecture case studies & certifications</div>
+							</div>
+						</div>
+						<span class="cmd-kbd-badge">Page</span>
+					</a>
+					<a href="skills.html" class="cmd-item" data-cmd-search="skills stack java spring boot kafka redis kubernetes">
+						<div class="cmd-item-left">
+							<span class="cmd-item-icon"><i class="fa fa-cogs"></i></span>
+							<div>
+								<div class="cmd-item-label">Technical Skills & Architecture Radar</div>
+								<div class="cmd-item-desc">Full technology stack matrix and domain expertise</div>
+							</div>
+						</div>
+						<span class="cmd-kbd-badge">Page</span>
+					</a>
+					<a href="about.html" class="cmd-item" data-cmd-search="about experience timeline education career">
+						<div class="cmd-item-left">
+							<span class="cmd-item-icon"><i class="fa fa-user"></i></span>
+							<div>
+								<div class="cmd-item-label">About & Career Timeline</div>
+								<div class="cmd-item-desc">8+ years trajectory across Lowe's, IBM, HCL, CGI</div>
+							</div>
+						</div>
+						<span class="cmd-kbd-badge">Page</span>
+					</a>
+				</div>
+			</div>
+			<div class="cmd-palette-footer">
+				<div class="cmd-footer-keys">
+					<span class="cmd-key-hint"><kbd class="cmd-kbd-badge">↑</kbd><kbd class="cmd-kbd-badge">↓</kbd> Navigate</span>
+					<span class="cmd-key-hint"><kbd class="cmd-kbd-badge">↵</kbd> Select</span>
+					<span class="cmd-key-hint"><kbd class="cmd-kbd-badge">esc</kbd> Dismiss</span>
+				</div>
+				<span>Spotlight 2026 Engine</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- 4. "Ask Prashant's AI Twin" Floating Launcher & Chat Window -->
+	<button id="aiTwinLauncher" class="ai-twin-launcher" type="button" onclick="toggleAITwin()" aria-label="Ask Prashant AI Architecture Twin">
+		<span class="ai-twin-avatar-orb">
+			<i class="fa fa-microchip"></i>
+			<span class="ai-twin-pulse-dot"></span>
+		</span>
+		<span>Ask AI Architecture Twin</span>
+	</button>
+
+	<div id="aiTwinWidget" class="ai-twin-widget-window" aria-hidden="true">
+		<div class="ai-twin-header">
+			<div class="ai-twin-header-info">
+				<span class="ai-twin-avatar-orb">
+					<i class="fa fa-microchip"></i>
+					<span class="ai-twin-pulse-dot"></span>
+				</span>
+				<div>
+					<div class="ai-twin-header-title">Prashant's AI Twin <span class="badge-pill ml-1" style="font-size: 9px; padding: 2px 6px;">2026 AGENT</span></div>
+					<div class="ai-twin-header-subtitle">Trained on Verified Enterprise Architecture</div>
+				</div>
+			</div>
+			<button type="button" class="ai-twin-close-btn" onclick="toggleAITwin(false)" aria-label="Close AI Twin chat">
+				<i class="fa fa-times"></i>
+			</button>
+		</div>
+		<div class="ai-twin-messages-area" id="aiTwinMessages">
+			<div class="ai-msg ai-msg-assistant">
+				<p style="margin: 0;">
+					👋 Hi! I'm <strong>Prashant's AI Architecture Twin</strong>. I can answer questions about how Prashant scaled <strong>Lowe's Tachyon platform across 1,621 stores</strong> with <strong>170ms P99 latency</strong>, his IBM CI/CD control plane, tech stack, or availability.
+				</p>
+			</div>
+		</div>
+		<!-- Quick Suggestion Pills -->
+		<div class="ai-quick-pills">
+			<button type="button" class="ai-pill-btn" onclick="askAITwinPrompt('How did Prashant scale Lowe\'s to 1,621 stores?')">⚡ Scale at Lowe's</button>
+			<button type="button" class="ai-pill-btn" onclick="askAITwinPrompt('What is Prashant\'s core tech stack?')">🛠️ Tech Stack</button>
+			<button type="button" class="ai-pill-btn" onclick="askAITwinPrompt('Tell me about IBM CI/CD control plane')">🛡️ IBM Control Plane</button>
+			<button type="button" class="ai-pill-btn" onclick="askAITwinPrompt('Why should I hire Prashant as a Tech Lead?')">💼 Why Hire Him?</button>
+		</div>
+		<div class="ai-twin-input-area">
+			<input type="text" id="aiTwinInput" class="ai-twin-input" placeholder="Ask anything about architecture, scale, stack..." autocomplete="off">
+			<button type="button" class="ai-twin-send-btn" onclick="sendAITwinMessage()" aria-label="Send message">
+				<i class="fa fa-paper-plane"></i>
+			</button>
+		</div>
+	</div>
+
+
 
 
 
@@ -1547,8 +1957,8 @@
 	<!-- <script src="js/jquery.ajaxchimp.min.js"></script> -->
 	<!-- <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
         <script src="vendors/counter-up/jquery.counterup.min.js"></script> -->
-	<!-- <script src="js/mail-script.js"></script> -->
 	<script src="js/theme.js"></script>
+	<script src="js/modern-features.js"></script>
 	<script>
 		// Ensure Bootstrap tab switching works smoothly
 		$(document).ready(function () {
