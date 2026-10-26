@@ -26,70 +26,17 @@
   window.addEventListener('beforeinstallprompt', function (e) {
     e.preventDefault();
     deferredPrompt = e;
-    showInstallBanner();
   });
 
   // Track successful installation
   window.addEventListener('appinstalled', function () {
     console.log('[PWA] Application successfully installed.');
     deferredPrompt = null;
-    hideInstallBanner();
   });
 
   function isIos() {
     var userAgent = window.navigator.userAgent.toLowerCase();
     return /iphone|ipad|ipod/.test(userAgent) && !window.MSStream;
-  }
-
-  function isMobileDevice() {
-    return /android|iphone|ipad|ipod|mobile/i.test(navigator.userAgent);
-  }
-
-  function showInstallBanner() {
-    if (isStandalone || sessionStorage.getItem('pwa_banner_dismissed') === 'true') {
-      return;
-    }
-    var existingBanner = document.getElementById('pwaInstallBanner');
-    if (!existingBanner) {
-      createMobileInstallBanner();
-    }
-  }
-
-  function hideInstallBanner() {
-    var banner = document.getElementById('pwaInstallBanner');
-    if (banner) {
-      banner.style.display = 'none';
-    }
-  }
-
-  function createMobileInstallBanner() {
-    var banner = document.createElement('div');
-    banner.id = 'pwaInstallBanner';
-    banner.className = 'pwa-smart-banner';
-    banner.innerHTML = '' +
-      '<div class="pwa-banner-content">' +
-      '  <div class="pwa-banner-icon">' +
-      '    <img src="img/app-icon.svg" alt="App Icon" width="42" height="42">' +
-      '  </div>' +
-      '  <div class="pwa-banner-text">' +
-      '    <strong>Prashant Jha App</strong>' +
-      '    <span>Add to home screen for fast fullscreen experience</span>' +
-      '  </div>' +
-      '</div>' +
-      '<div class="pwa-banner-actions">' +
-      '  <button type="button" class="pwa-btn-install" id="pwaBannerInstallBtn">' +
-      '    <i class="fa fa-download mr-1"></i> Install' +
-      '  </button>' +
-      '  <button type="button" class="pwa-btn-close" id="pwaBannerCloseBtn" aria-label="Dismiss">&times;</button>' +
-      '</div>';
-
-    document.body.appendChild(banner);
-
-    document.getElementById('pwaBannerInstallBtn').addEventListener('click', triggerInstallFlow);
-    document.getElementById('pwaBannerCloseBtn').addEventListener('click', function () {
-      banner.style.display = 'none';
-      sessionStorage.setItem('pwa_banner_dismissed', 'true');
-    });
   }
 
   function triggerInstallFlow(e) {
@@ -100,7 +47,6 @@
       deferredPrompt.userChoice.then(function (choiceResult) {
         if (choiceResult.outcome === 'accepted') {
           console.log('[PWA] User accepted installation.');
-          hideInstallBanner();
         }
         deferredPrompt = null;
       });
@@ -277,8 +223,9 @@
   // Initial load binding
   document.addEventListener('DOMContentLoaded', function () {
     bindTriggers();
-    if (isMobileDevice() && !isStandalone) {
-      showInstallBanner();
+    var staleBanner = document.getElementById('pwaInstallBanner');
+    if (staleBanner) {
+      staleBanner.remove();
     }
   });
 
