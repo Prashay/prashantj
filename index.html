@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light" class="light-mode">
 
 <head>
 	<!-- Required meta tags -->
@@ -10,7 +10,7 @@
 
 	<!-- PWA Mobile App Capabilities -->
 	<link rel="manifest" href="manifest.json">
-	<meta name="theme-color" content="#090d16">
+	<meta name="theme-color" content="#f8fafc">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<meta name="apple-mobile-web-app-title" content="Prashant Jha">
@@ -38,11 +38,11 @@
 	<link rel="stylesheet" href="css/responsive.css">
 	<link rel="stylesheet" href="css/modern-design.css">
 	<script src="js/theme-toggle.js"></script>
-	<script src="js/pwa-install.js"></script>
+	<script src="js/offline.js"></script>
 
 </head>
 
-<body>
+<body class="light-mode">
 	<!-- Modern 2026 AI Era Architecture Starting Loader -->
 	<div id="loading">
 		<div class="loader-container">
@@ -117,7 +117,7 @@
 			</div>
 			<div class="loader-meta-specs">
 				<span><i class="fa fa-server"></i> 1,621 STORES</span>
-				<span><i class="fa fa-bolt"></i> 170ms P99</span>
+				<span><i class="fa fa-bolt"></i> 170–180 ms p99 (load test)</span>
 				<span><i class="fa fa-microchip"></i> 2026 AI ERA</span>
 			</div>
 		</div>
@@ -166,15 +166,8 @@
 							<li class="nav-item">
 								<button class="theme-toggle-btn" type="button" aria-label="Toggle Light/Dark Theme"
 									title="Toggle Light/Dark Theme">
-									<i class="fa fa-sun-o theme-icon"></i>
-									<span class="theme-text">Light Mode</span>
-								</button>
-							</li>
-							<li class="nav-item">
-								<button class="app-download-btn" type="button" aria-label="Download Mobile App"
-									title="Download Mobile App & Scanner">
-									<i class="fa fa-qrcode mr-1"></i>
-									<span>Download App</span>
+									<i class="fa fa-moon-o theme-icon"></i>
+									<span class="theme-text">Dark Mode</span>
 								</button>
 							</li>
 							<li class="nav-item">
@@ -232,7 +225,7 @@
 									</h2>
 
 									<div class="tech-badge-container">
-										<span class="badge-pill">Java 8/17/21</span>
+										<span class="badge-pill">Java</span>
 										<span class="badge-pill">Spring Boot</span>
 										<span class="badge-pill">Microservices</span>
 										<span class="badge-pill">Apache Kafka</span>
@@ -249,9 +242,7 @@
 										mentor 8 engineers and support backend stability across <strong>1,621
 											stores</strong> and peak volumes of <strong>2.3M transactions across the
 											BFCM event</strong>
-										using Java 17, Spring Boot, Kafka, Redis, and PostgreSQL. Previously led a
-										10-engineer team at <strong>IBM</strong> delivering cloud-native control-plane
-										tooling; optimized API latency from 8 seconds to 170 milliseconds.
+										using Java 17, Spring Boot, Kafka, Redis, and PostgreSQL. At Lowe’s, Redis caching and Elasticsearch tuning reduced API p99 from 2.5–3 seconds to 170–180 ms in load tests. At <strong>IBM</strong>, led technical delivery involving 10 engineers and built a Kubernetes deployment control plane with Kafka and Argo Workflows.
 									</p>
 
 									<ul class="list basic_info">
@@ -302,9 +293,9 @@
 						<span class="telemetry-icon"><i class="fa fa-bolt"></i></span>
 						<span class="telemetry-pulse"><span class="pulse-dot"></span> Live</span>
 					</div>
-					<div class="telemetry-metric telemetry-metric-gradient">170 ms</div>
+					<div class="telemetry-metric telemetry-metric-gradient">170–180 ms</div>
 					<div class="telemetry-label">p99 API Latency</div>
-					<div class="telemetry-sub">Reduced from 8s via distributed Redis & Elasticsearch</div>
+					<div class="telemetry-sub">From 2.5–3 seconds in load tests using Redis and Elasticsearch</div>
 				</div>
 
 				<div class="telemetry-card">
@@ -353,9 +344,9 @@
 						<span class="telemetry-icon"><i class="fa fa-clock-o"></i></span>
 						<span class="telemetry-pulse"><span class="pulse-dot"></span> CI/CD</span>
 					</div>
-					<div class="telemetry-metric telemetry-metric-gradient">2 Min</div>
+					<div class="telemetry-metric telemetry-metric-gradient">Seconds</div>
 					<div class="telemetry-label">Deployment Speed</div>
-					<div class="telemetry-sub">Cut from 7 min via PerfX and SonarQube quality gates</div>
+					<div class="telemetry-sub">Reduced from 6–7 minutes through CI/CD improvements</div>
 				</div>
 			</div>
 
@@ -387,7 +378,7 @@
 					<div class="d-flex justify-content-between mt-2 sim-slider-ticks">
 						<span>10 Stores (Staging Baseline)</span>
 						<span>800 Stores (Mid-Day Volume)</span>
-						<span>1,621 Stores (Peak BFCM Event Concurrency)</span>
+						<span>1,621 Stores (Simulated Scale)</span>
 					</div>
 				</div>
 
@@ -400,7 +391,7 @@
 							<span class="sim-arch-status sim-status-optimal">NON-BLOCKING</span>
 						</div>
 						<div class="sim-kpi-large">
-							<span class="sim-p99-num" id="simDisplayReactive">170ms P99</span>
+							<span class="sim-p99-num" id="simDisplayReactive">170 ms p99</span>
 							<span class="sim-p99-unit">simulated latency</span>
 						</div>
 						<div class="sim-meter-track">
@@ -507,7 +498,7 @@
 						</div>
 					</div>
 					<div class="matrix-tags">
-						<span class="matrix-tag highlight"><i class="fa fa-check-circle"></i> Java 17 / Java 8</span>
+						<span class="matrix-tag highlight"><i class="fa fa-check-circle"></i> Java</span>
 						<span class="matrix-tag"><i class="fa fa-check-circle"></i> Multithreading</span>
 						<span class="matrix-tag"><i class="fa fa-check-circle"></i> Concurrency</span>
 						<span class="matrix-tag"><i class="fa fa-check-circle"></i> JVM Internals & GC Tuning</span>
@@ -581,7 +572,7 @@
 						<span class="matrix-tag"><i class="fa fa-check-circle"></i> MySQL</span>
 					</div>
 					<div class="matrix-footer-stat">
-						<i class="fa fa-bolt"></i> 170ms p99 query & search latency
+						<i class="fa fa-bolt"></i> 170–180 ms API p99 in load tests
 					</div>
 				</div>
 
@@ -660,7 +651,7 @@
 											distributed caching</strong>, and <strong>Elasticsearch</strong> to process
 										telemetry and events from edge stores via <strong>MQTT brokers</strong>.<br>
 										• Optimized high-traffic inventory and lookup APIs, reducing <strong>p99 latency
-											from 8 seconds to 170 milliseconds</strong>.<br>
+											from 2.5–3 seconds to 170–180 ms in load tests</strong>.<br>
 										• Built secure secret-creation and device-login mechanism adopted as the
 										client's standard authentication interface for store users.<br>
 										• Drive Snyk-based security remediation across Java, Python, and npm
@@ -668,8 +659,7 @@
 										resolution.<br>
 										• Designed Grafana, Kibana, and Prometheus dashboards; raised automated test
 										coverage from 46% to <strong>80% using JUnit 5/BDD</strong>.<br>
-										• Cut deployment time from 6–7 minutes to <strong>2 minutes</strong> with PerfX
-										and SonarQube quality gates.
+										• Contributed to CI/CD improvements that reduced deployment time from 6–7 minutes to <strong>seconds</strong>.
 									</p>
 									<div class="timeline-meta-row">
 										<div class="timeline-tags">
@@ -1399,7 +1389,7 @@
 							</a>
 							<a href="skills.html" class="radar_stat_row">
 								<span><i class="fa fa-flash text-warning mr-2"></i> Redis Distributed Caching</span>
-								<span class="radar_stat_badge green">170ms p99</span>
+								<span class="radar_stat_badge green">170–180 ms p99 (load test)</span>
 							</a>
 							<a href="skills.html" class="radar_stat_row">
 								<span><i class="fa fa-cloud text-info mr-2"></i> Kubernetes & Argo CD</span>
@@ -1542,8 +1532,8 @@
 						<div class="recruiter-kpi-sub">Stores Orchestrated (Lowe's)</div>
 					</div>
 					<div class="recruiter-card-kpi">
-						<div class="recruiter-kpi-num">170ms</div>
-						<div class="recruiter-kpi-sub">Deterministic P99 Latency</div>
+						<div class="recruiter-kpi-num">170–180 ms</div>
+						<div class="recruiter-kpi-sub">API p99 in load tests</div>
 					</div>
 					<div class="recruiter-card-kpi">
 						<div class="recruiter-kpi-num">2.3M</div>
@@ -1557,7 +1547,7 @@
 						Core Production Stack & Disciplines
 					</div>
 					<div class="tech-badge-container mb-0" style="gap: 6px;">
-						<span class="badge-pill">Java 8/17/21</span>
+						<span class="badge-pill">Java</span>
 						<span class="badge-pill">Spring Boot</span>
 						<span class="badge-pill">Microservices</span>
 						<span class="badge-pill">Apache Kafka</span>
@@ -1574,8 +1564,8 @@
 					<p class="recruiter-pitch-text">
 						"Senior Backend Engineer and Technical Lead with 8+ years designing and implementing resilient,
 						distributed systems at scale. At Lowe's India, scaled the Tachyon edge platform across 1,621
-						stores with 170ms P99 latency and 2.3M transactions across the BFCM event. Technical lead for 8
-						engineers at Lowe's and 10 at IBM in Java 8/17/21, Spring Boot, microservices, Kafka,
+						stores. The platform processed 2.3M transactions across the BFCM event. Redis caching and Elasticsearch tuning reduced API p99 to 170–180 ms in load tests. Technical lead for 8
+						engineers at Lowe's and 10 at IBM in Java, Spring Boot, microservices, Kafka,
 						Kubernetes, and 2026 Agentic AI / MCP integration."
 					</p>
 				</div>
@@ -1602,8 +1592,8 @@
 					<span class="blueprint-tag-pill" id="blueprintBadge">HIGH-CONCURRENCY DISTRIBUTED EDGE &
 						CLUSTER</span>
 					<h3 class="blueprint-title" id="blueprintTitle">Lowe's Tachyon Distributed Store Architecture</h3>
-					<span style="font-size: 12px; color: #38bdf8; font-family: monospace;" id="blueprintMetrics">1,621
-						Stores • 2.3M Transactions Across BFCM Event • 170ms P99</span>
+					<span style="font-size: 12px; color: #38bdf8; font-family: Arial, sans-serif;" id="blueprintMetrics">1,621
+						Stores • 2.3M Transactions Across BFCM Event • 170–180 ms p99 (load test)</span>
 				</div>
 				<button type="button" class="ai-twin-close-btn" onclick="closeBlueprintModal()"
 					aria-label="Close modal">
@@ -1640,7 +1630,7 @@
 						<div class="blueprint-node highlighted">
 							<span class="blueprint-node-tag">Microservices</span>
 							<div class="blueprint-node-title">Spring Boot Services</div>
-							<span class="blueprint-node-metric">170ms P99</span>
+							<span class="blueprint-node-metric">170–180 ms p99 (load test)</span>
 						</div>
 						<div class="blueprint-connector">
 							<div class="blueprint-connector-line"></div>
@@ -1847,7 +1837,7 @@
 				<p style="margin: 0;">
 					👋 Hi! I'm <strong>Prashant's AI Architecture Twin</strong>. I can answer questions about how
 					Prashant contributed to <strong>Lowe's Tachyon platform across 1,621 stores</strong> with
-					<strong>170ms P99 latency</strong>, his IBM CI/CD control plane, tech stack, or availability.
+					<strong>170–180 ms API p99 in load tests</strong>, his IBM CI/CD control plane, tech stack, or availability.
 				</p>
 			</div>
 		</div>

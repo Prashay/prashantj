@@ -34,8 +34,8 @@
     window.copyRecruiterPitch = function () {
         const pitchText = `Prashant Kumar Jha - Senior Backend Engineer & Technical Lead
 8+ Years Experience | Distributed Systems, Cloud Architecture & GenAI
-Key Scale Impact: Scaled Lowe's Tachyon platform across 1,621 stores with 170ms P99 latency & 2.3M transactions across the BFCM event.
-Core Stack: Java 8/17/21, Spring Boot, Microservices, Kafka, Redis, Docker, Kubernetes, AWS, MCP / Agentic AI.
+Key Scale Impact: Delivered backend services supporting 1,621 Lowe's retail stores. API p99 fell from 2.5–3 seconds to 170–180 ms in load tests. The platform processed 2.3M transactions across the BFCM event.
+Core Stack: Java, Spring Boot, Microservices, Kafka, Redis, Docker, Kubernetes, AWS, MCP / Agentic AI.
 Contact: jprashant2026@gmail.com | Portfolio: https://prashay.github.io/prashantj/ | LinkedIn: https://www.linkedin.com/in/prashant-kumar-jha-5b504b185`;
 
         navigator.clipboard.writeText(pitchText).then(() => {
@@ -61,13 +61,13 @@ Contact: jprashant2026@gmail.com | Portfolio: https://prashay.github.io/prashant
         lowes: {
             title: "Lowe's Tachyon Distributed Store Architecture (1,621 Stores)",
             badge: "HIGH-CONCURRENCY DISTRIBUTED EDGE & CLUSTER",
-            metrics: "1,621 Stores • 2.3M Transactions Across the BFCM Event • 170ms P99 Latency • 99.99% Uptime",
+            metrics: "1,621 Stores • 2.3M Transactions Across the BFCM Event • 170–180 ms API p99 in load tests",
             description: "High-throughput, event-driven distributed checkout & inventory synchronization architecture connecting 1,621 edge retail store servers to cloud microservices with sub-second real-time consistency.",
             nodes: [
                 { id: "edge", label: "Edge Store Terminals", sub: "1,621 Stores Point-of-Sale", desc: "Local edge POS clusters running store instances with offline buffer queues." },
                 { id: "ingress", label: "API Gateway", sub: "Rate-Limiting & Ingress Routing", desc: "High-performance edge ingress routing for store requests with circuit breakers." },
                 { id: "kafka", label: "Kafka Event Mesh", sub: "Partitioned Transaction Topics", desc: "Distributed log ensuring zero transaction drop with dead-letter queue recovery." },
-                { id: "services", label: "Spring Boot Microservices", sub: "Java 8/17/21 & Microservices", desc: "Horizontally scalable containers processing core checkout and business workflows." },
+                { id: "services", label: "Spring Boot Microservices", sub: "Java & Microservices", desc: "Horizontally scalable containers processing core checkout and business workflows." },
                 { id: "cache", label: "Redis Cache", sub: "Distributed In-Memory Store", desc: "Sub-5ms in-memory cache layer maintaining stock availability and store catalog." },
                 { id: "persistence", label: "Relational Persistence", sub: "PostgreSQL Data Cluster", desc: "Partitioned relational audit records and localized store transactional persistence." },
                 { id: "telemetry", label: "Observability Grid", sub: "Prometheus, Grafana, Splunk", desc: "Real-time distributed tracing with OpenTelemetry, alerting on SLA anomalies." }
@@ -204,7 +204,7 @@ Contact: jprashant2026@gmail.com | Portfolio: https://prashay.github.io/prashant
     const aiKnowledgeBase = [
         {
             keywords: ["scale", "1621", "1,621", "store", "stores", "lowe", "lowes", "latency", "170ms", "p99", "tachyon"],
-            response: `At Lowe's India, Prashant contributed to the **Tachyon store platform** deployed across **1,621 stores**, processing **2.3M transactions across the BFCM event** with an SLA-beating **170ms P99 latency**.<br><br>Key technical contributions included:<br>• <strong>Event-Driven Ingress:</strong> Distributed Kafka partitions regulating edge-to-cloud backpressure.<br>• <strong>Sub-5ms Distributed Caching:</strong> In-memory Redis cache with write-through invalidation.<br>• <strong>Spring Boot Microservices:</strong> Horizontally scalable services preventing I/O exhaustion under peak loads.<br>• <strong>Resilience:</strong> Circuit breakers & dead-letter queues enabling 99.99% system availability.`
+            response: `At Lowe's India, Prashant led technical delivery for 8 engineers and delivered 30+ REST APIs and Spring Boot microservices supporting 1,621 retail stores. Shared Redis cache-aside for Elasticsearch-backed APIs, with incremental per-store refresh, failover and fallback endpoints, reduced API p99 from 2.5–3 seconds to 170–180 ms in k6 load tests. He built Kafka ingestion for MQTT telemetry and supported production incidents during BFCM, when the platform processed 2.3 million transactions across the event.`
         },
         {
             keywords: ["ibm", "cicd", "ci/cd", "pipeline", "control plane", "canary", "snyk", "security"],
@@ -276,7 +276,7 @@ Contact: jprashant2026@gmail.com | Portfolio: https://prashay.github.io/prashant
             }
 
             if (!matchedAnswer) {
-                matchedAnswer = `I specialize in Prashant's architecture at Lowe's (1,621 stores, 170ms P99), IBM CI/CD control planes, and 2026 Agentic AI / MCP workflows. Feel free to ask about his **distributed systems metrics**, **Spring Boot & Kafka stack**, **certifications**, or **leadership experience**!`;
+                matchedAnswer = `I specialize in Prashant's architecture at Lowe's (1,621 stores, 170–180 ms API p99 in load tests), IBM CI/CD control planes, and 2026 Agentic AI / MCP workflows. Feel free to ask about his **distributed systems metrics**, **Spring Boot & Kafka stack**, **certifications**, or **leadership experience**!`;
             }
 
             const botMsgDiv = document.createElement('div');

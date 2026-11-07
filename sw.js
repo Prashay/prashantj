@@ -2,7 +2,7 @@
    PRASHANT JHA PORTFOLIO - SERVICE WORKER (PWA ENGINE)
    Enables offline capability, instant load & native app installation
 ===================================================================== */
-const CACHE_NAME = 'prashant-jha-pwa-v1';
+const CACHE_NAME = 'prashant-jha-pwa-v2';
 
 const STATIC_ASSETS = [
   './',
@@ -16,7 +16,9 @@ const STATIC_ASSETS = [
   './css/style.css',
   './css/responsive.css',
   './css/modern-design.css',
-  './js/theme-toggle.js'
+  './js/theme-toggle.js',
+  './js/offline.js',
+  './js/modern-features.js'
 ];
 
 // Install: cache essential assets and take control immediately

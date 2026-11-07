@@ -1,20 +1,21 @@
 /**
  * Prashant Jha Portfolio - Theme Engine (Dark & Light Mode)
  * Ultra-robust theme switcher with instant zero-flash execution,
- * localStorage persistence, system scheme detection & multi-target click bindings.
+ * localStorage persistence and multiple toggle controls.
+ * Default: Light Mode
  */
 (function () {
   'use strict';
 
-  var STORAGE_KEY = 'pj_theme_preference';
+  var STORAGE_KEY = 'pj_theme_preference_v2';
 
   function getSavedTheme() {
     try {
       var saved = localStorage.getItem(STORAGE_KEY);
       if (saved === 'light' || saved === 'dark') return saved;
     } catch (e) {}
-    // Default to dark mode for portfolio aesthetic if not explicitly set
-    return 'dark';
+    // Default to light mode
+    return 'light';
   }
 
   function applyTheme(theme) {
@@ -41,6 +42,12 @@
         document.body.classList.remove('light-mode');
         document.body.classList.add('dark-mode');
       }
+    }
+
+    // Update meta theme-color
+    var metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme) {
+      metaTheme.setAttribute('content', isLight ? '#f8fafc' : '#090d16');
     }
 
     updateAllToggleButtons(theme);
@@ -71,7 +78,7 @@
   }
 
   function toggleTheme() {
-    var current = document.documentElement.getAttribute('data-theme') || 'dark';
+    var current = document.documentElement.getAttribute('data-theme') || 'light';
     var next = current === 'light' ? 'dark' : 'light';
     try {
       localStorage.setItem(STORAGE_KEY, next);
@@ -85,6 +92,10 @@
     document.documentElement.setAttribute('data-theme', initialTheme);
     if (initialTheme === 'light') {
       document.documentElement.classList.add('light-mode');
+      document.documentElement.classList.remove('dark-mode');
+    } else {
+      document.documentElement.classList.add('dark-mode');
+      document.documentElement.classList.remove('light-mode');
     }
   }
 
@@ -97,8 +108,8 @@
       floatingBtn = document.createElement('button');
       floatingBtn.className = 'floating-theme-toggle';
       floatingBtn.setAttribute('type', 'button');
-      floatingBtn.setAttribute('aria-label', 'Toggle Light/Dark Theme');
-      floatingBtn.setAttribute('title', 'Toggle Light/Dark Theme');
+      floatingBtn.setAttribute('aria-label', initialTheme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+      floatingBtn.setAttribute('title', initialTheme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode');
       floatingBtn.innerHTML = initialTheme === 'light' ? '<i class="fa fa-moon-o"></i>' : '<i class="fa fa-sun-o"></i>';
       document.body.appendChild(floatingBtn);
     }
@@ -134,7 +145,7 @@
 
   // Expose global controller
   window.PJTheme = {
-    get: function () { return document.documentElement.getAttribute('data-theme') || 'dark'; },
+    get: function () { return document.documentElement.getAttribute('data-theme') || 'light'; },
     set: applyTheme,
     toggle: toggleTheme
   };
